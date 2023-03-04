@@ -1,5 +1,7 @@
 # My Dotfiles
 
-Need to fix items under the .config folder, changes are not currently tied to this repository.
+My configs for neovim, zsh, powerline10k, and ranger.
 
-* Symlink  main configuration files directly into my ~/.dotfiles folder to allow it to sync with the git repository. 
+# TODO
+
+Add the oh-my-zsh and iterm2 configs to github as well.
