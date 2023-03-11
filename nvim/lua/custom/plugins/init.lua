@@ -1,5 +1,24 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
+-- List of plugins currently loading under this file:
+-- vim-fugitive
+-- vim-rhubarb
+-- vim-sleuth
+-- nvim-lspconfig (move?)
+-- mason (move?)
+-- mason-lspconfig (move?)
+-- fidget.nvim (move?)
+-- neodev.nvim (move?)
+-- nvim-cmp (move?)
+-- which-key (move?)
+-- gitsigns.nvim (move?)
+-- lualine (move?)
+-- indent_blankline (move?)
+-- telescope
+-- telescope fzf native
+-- telescope file browser
+-- treesitter (move?)
+-- notify.nvim (move?)
+-- nui.nvim (move?)
+-- noice.nvim (move?)
 
 return {
   -- NOTE: First, some plugins that don't require any configuration
@@ -60,7 +79,7 @@ return {
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'auto',
         component_separators = '|',
         section_separators = '',
@@ -94,22 +113,8 @@ return {
     end,
   },
 
-  -- lightweight code runner
-
   -- UI notifications
   { 'rcarriga/nvim-notify' },
   { 'MunifTanjim/nui.nvim' },
   { 'folke/noice.nvim' },
 }
-
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  --[[  require 'kickstart.plugins.autoformat', ]]
-  --[[   require 'kickstart.plugins.debug', ]]
-
-  -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --
-  --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
