@@ -1,25 +1,3 @@
--- List of plugins currently loading under this file:
--- vim-fugitive
--- vim-rhubarb
--- vim-sleuth
--- nvim-lspconfig (move?)
--- mason (move?)
--- mason-lspconfig (move?)
--- fidget.nvim (move?)
--- neodev.nvim (move?)
--- nvim-cmp (move?)
--- which-key (move?)
--- gitsigns.nvim (move?)
--- lualine (move?)
--- indent_blankline (move?)
--- telescope
--- telescope fzf native
--- telescope file browser
--- treesitter (move?)
--- notify.nvim (move?)
--- nui.nvim (move?)
--- noice.nvim (move?)
-
 return {
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -30,8 +8,11 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- mini.basics.nvim plugin (common presets for nvim)
+  { 'echasnovski/mini.basics', version = false },
+
   -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
+
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -55,8 +36,25 @@ return {
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   },
 
+
+  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope-fzf-native.nvim' },
+  { 'nvim-telescope/telescope-file-browser.nvim' },
+
+  {
+    -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    config = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  },
+
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
+
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -93,24 +91,9 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = '|',
+      char = '⎸',
       show_trailing_blankline_indent = false,
     },
-  },
-
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
-  { 'nvim-telescope/telescope-fzf-native.nvim' },
-  { 'nvim-telescope/telescope-file-browser.nvim' },
-
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    config = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
   },
 
   -- UI notifications

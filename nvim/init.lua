@@ -28,75 +28,44 @@ vim.opt.rtp:prepend(lazypath)
 -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 require('lazy').setup('custom.plugins')
 
--- 3/4/23
+-- 3/18/23
 -- current set up options/remaps/etc. listed in the rest of the below file:
--- vim.o options, keymaps, YankHighlight, telescope, treesitter, diagnostic keymaps, lsp, neodev, cmp, and mason.
--- TODO: pull out the below into different config files for better organization.
-
--- [[ Setting options ]]
--- See `:help vim.o`
+-- mini.nvim basics plugin config, telescope, treesitter, diagnostic keymaps, lsp, neodev, cmp, and mason.
+-- TODO: move treesitter, telescope, diag keymaps, lsp, and cmp settings to different lua modules.
+require('mini.basics').setup({
+  options = {
+    basic = true,
+    extra_ui = true,
+    win_borders = 'bold',
+  },
+  mappings = {
+    basic = true,
+    option_toggle_prefix = [[\]],
+    windows = true,
+    move_with_alt = false,
+  },
+  autocommands = {
+    basic = true,
+    relnum_in_visual_mode = false,
+  },
+})
 
 -- Set highlight on search
 vim.o.hlsearch = false
 
--- Make line numbers default
-vim.wo.number = true
-
--- Enable mouse mode
-vim.o.mouse = 'a'
-
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
--- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
-
--- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
-
+-- python 3.11 default and checkhealth fixes
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {

@@ -1,18 +1,16 @@
--- transparent background
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-
--- My default colorscheme is currently set to nordic.
+-- My default colorscheme is currently set to tokyonight-storm.
 return {
-  { 'AlexvZyl/nordic.nvim',
-    name = 'nordic',
+  { 'AlexvZyl/nordic.nvim', name = 'nordic' },
+
+  -- List of other installed colorschemes:
+  { 'folke/tokyonight.nvim',
+    name = 'tokyonight',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'nordic'
+      vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
 
-  -- List of other installed colorschemes:
-  { 'folke/tokyonight.nvim', name = 'tokyonight' },
   { 'EdenEast/nightfox.nvim', name = 'nightfox' },
   { "catppuccin/nvim", name = "catppuccin" },
   { 'rose-pine/neovim', name = 'rose-pine' },
