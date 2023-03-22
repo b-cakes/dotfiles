@@ -8,8 +8,6 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- mini.basics.nvim plugin (common presets for nvim)
-  { 'echasnovski/mini.basics', version = false },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
 
@@ -40,17 +38,6 @@ return {
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim' },
   { 'nvim-telescope/telescope-file-browser.nvim' },
-
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    config = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
-  },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
