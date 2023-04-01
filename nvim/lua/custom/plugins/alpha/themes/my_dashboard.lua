@@ -98,11 +98,9 @@ end
 local buttons = {
     type = "group",
     val = {
-        button("e", "📄  New file", "<cmd>ene <CR>"),
-        button("SPC   ?", "🗒️  Recently opened files"),
-        button("SPC f m", "🗃️  File Manager"),
-        button("SPC s f", "🔍  Search Files"),
-        button("SPC s w", "📝  Search Word"),
+        button("SPC   ?", " ﮦ   Recent Files"),
+        button("SPC f m", "    File Manager"),
+        button("SPC s f", "    Search Files"),
 
     },
     opts = {
