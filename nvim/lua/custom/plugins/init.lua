@@ -8,27 +8,7 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-
-  -- NOTE: This is where your plugins related to LSP can be installed.
-
-  {
-    -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
-    },
-  },
-
-
+  -- Telescope loading
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim' },
   { 'nvim-telescope/telescope-file-browser.nvim' },
@@ -77,6 +57,8 @@ return {
       show_current_context_start = true,
     },
   },
+
+  { 'weilbith/nvim-code-action-menu' },
 
   -- UI notifications
   { 'rcarriga/nvim-notify' },
