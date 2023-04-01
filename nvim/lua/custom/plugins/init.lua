@@ -28,12 +28,6 @@ return {
     },
   },
 
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  },
-
 
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim' },
@@ -65,7 +59,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
@@ -78,8 +72,9 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = '⎸',
-      show_trailing_blankline_indent = false,
+      char = '│',
+      show_current_context = true,
+      show_current_context_start = true,
     },
   },
 
