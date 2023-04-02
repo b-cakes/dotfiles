@@ -1,9 +1,7 @@
--- My default colorscheme is currently set to tokyonight-storm.
 return {
-  { 'AlexvZyl/nordic.nvim', name = 'nordic' },
-
-  -- List of other installed colorschemes:
-  { 'folke/tokyonight.nvim',
+  -- default
+  {
+    'folke/tokyonight.nvim',
     name = 'tokyonight',
     priority = 1000,
     config = function()
@@ -11,6 +9,9 @@ return {
     end,
   },
 
+  -- List of other installed colorschemes:
+  { 'AlexvZyl/nordic.nvim', name = 'nordic' },
+  { 'rebelot/kanagawa.nvim', name = 'kanagawa' },
   { 'EdenEast/nightfox.nvim', name = 'nightfox' },
   { "catppuccin/nvim", name = "catppuccin" },
   { 'rose-pine/neovim', name = 'rose-pine' },
