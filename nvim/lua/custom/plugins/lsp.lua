@@ -41,6 +41,7 @@ return {
       local lsp = require('lsp-zero')
 
 
+---@diagnostic disable-next-line: unused-local
       lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps({buffer = bufnr})
         local nmap = function(keys, func, desc)
@@ -52,7 +53,7 @@ return {
         end
 
         nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-        nmap('<leader>ca', ':CodeActionMenu<CR>', '[C]ode [A]ction')
+        nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
         nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
         nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
