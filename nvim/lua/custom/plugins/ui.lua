@@ -1,15 +1,44 @@
 return {
   -- Set lualine as statusline
   {
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "meuter/lualine-so-fancy.nvim",
+    },
     opts = {
       options = {
-        icons_enabled = true,
-        theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
+        theme = "auto",
+        component_separators = { left = " | ", right = " | "},
+        section_separators = { left = "█ ", right = " █"  },
+        globalstatus = false,
+        refresh = {
+          statusline = 100,
+        },
       },
+      sections = {
+        lualine_a = {
+          { "mode" },
+        },
+        lualine_b = {
+          { "branch" },
+          { "fancy_diff" },
+          { "filename" },
+          { "fancy_diagnostics" },
+        },
+        lualine_c = {
+        },
+        lualine_x = {
+          { "fancy_macro" },
+        },
+        lualine_y = {
+          { "progress" },
+          { "fancy_filetype", ts_icon = "" },
+        },
+        lualine_z = {
+          { "fancy_lsp_servers" }
+        },
+      }
     },
   },
 
@@ -92,9 +121,12 @@ return {
   {
     'sidebar-nvim/sidebar.nvim',
     opts = {
-      sections = {'datetime', 'git', 'buffers'},
+      sections = {
+        'datetime',
+        'buffers'
+      },
       initial_width = 100,
-      hide_statusline = true,
+      hide_statusline = false,
       datetime = {
         clocks = { { name = 'Local'} },
       },
