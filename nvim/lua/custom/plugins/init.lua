@@ -8,6 +8,8 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  { 'folke/neodev.nvim' },
+
   -- Telescope loading
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim' },
@@ -15,6 +17,9 @@ return {
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
+
+  -- color picker/viewer
+  { 'uga-rosa/ccc.nvim' },
 
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes

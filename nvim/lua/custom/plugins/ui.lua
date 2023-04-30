@@ -54,6 +54,7 @@ return {
     },
   },
 
+  -- float/popup ui 
   {'stevearc/dressing.nvim'},
 
   -- UI notifications
@@ -106,7 +107,10 @@ return {
             padding = { 0, 1 },
           },
           win_options = {
-            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+            winhighlight = {
+              Normal = "Normal",
+              FloatBorder = "DiagnosticInfo",
+            },
           },
         },
       },

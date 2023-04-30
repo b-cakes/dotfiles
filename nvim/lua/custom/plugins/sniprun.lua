@@ -9,5 +9,8 @@ return {
                 },
             })
         end,
-    }
+    },
+
+    vim.keymap.set('n', '<leader>rf', ':%SnipRun<CR>', {desc = 'Run File'}),
+
 }
