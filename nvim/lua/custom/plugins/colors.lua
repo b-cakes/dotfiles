@@ -8,7 +8,7 @@ return {
         style = 'storm',
         styles = {
         },
-        hide_inactive_statusline = true,
+        hide_inactive_statusline = false,
         lualine_bold = true,
         on_highlights = function(hl, c)
           local fg_pu = '#29a4bd'

@@ -5,12 +5,11 @@ return {
         config = function ()
             require('sniprun').setup({
                 display = {
-                    'TempFloatingWindow',
+                    'Terminal',
                 },
             })
         end,
     },
 
     vim.keymap.set('n', '<leader>rf', ':%SnipRun<CR>', {desc = 'Run File'}),
-
 }
