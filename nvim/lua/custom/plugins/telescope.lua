@@ -29,7 +29,6 @@ return {
     require('telescope').setup {
         extensions = {
             file_browser = {
-                theme = 'dropdown',
                 initial_mode = 'insert',
                 hijack_netrw = true,
                 hidden = true,
