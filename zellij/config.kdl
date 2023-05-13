@@ -237,12 +237,12 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "nightfox"
+theme "tokyo-night-storm"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -309,3 +309,9 @@ theme "nightfox"
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
+
+ui {
+    pane_frames {
+            rounded_corners true
+        }
+}

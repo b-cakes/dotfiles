@@ -28,6 +28,7 @@ return {
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
+      {'onsails/lspkind.nvim'},
     },
     config = function()
       -- This is where all the LSP shenanigans will live
@@ -39,7 +40,6 @@ return {
       })
 
       local lsp = require('lsp-zero')
-
 
 ---@diagnostic disable-next-line: unused-local
       lsp.on_attach(function(client, bufnr)
@@ -92,6 +92,27 @@ return {
       require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
       lsp.setup()
+      -- Make sure you setup `cmp` after lsp-zero
+
+      local cmp = require('cmp')
+      local lspkind = require('lspkind')
+
+      cmp.setup({
+        formatting = {
+          -- changing the order of fields so the icon is the first
+
+          -- here is where the change happens
+          format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            -- The function below will be called before any actual modifications from lspkind
+            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+            before = function (entry, vim_item)
+              return vim_item
+            end
+          })
+        }
+      })
     end
   }
 }
+
