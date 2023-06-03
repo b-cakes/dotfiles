@@ -28,6 +28,7 @@ return {
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
+      -- {'jose-elias-alvarez/null-ls.nvim'},
       {'onsails/lspkind.nvim'},
     },
     config = function()
@@ -38,6 +39,24 @@ return {
           border = 'rounded',
         }
       })
+
+      -- require("mason-null-ls").setup({
+      --   ensure_installed = {
+      --     -- Opt to list sources here, when available in mason.
+      --   },
+      --   automatic_installation = false,
+      --   handlers = {},
+      -- })
+
+      -- local null_ls = require('null-ls')
+      --
+      -- null_ls.setup({
+      --   sources = {
+      --     -- Anything not supported by mason.
+      --     null_ls.builtins.formatting.ruff,
+      --     null_ls.builtins.diagnostics.ruff,
+      --   }
+      -- })
 
       local lsp = require('lsp-zero')
 
@@ -91,8 +110,19 @@ return {
       -- (Optional) Configure lua language server for neovim
       require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+      -- (ruff_lsp)
+      require('lspconfig').ruff_lsp.setup({
+        init_options = {
+          settings = {
+            args = {},
+          },
+        },
+      })
+
+
       lsp.setup()
       -- Make sure you setup `cmp` after lsp-zero
+
 
       local cmp = require('cmp')
       local lspkind = require('lspkind')
