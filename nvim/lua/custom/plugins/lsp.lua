@@ -84,7 +84,7 @@ return {
       -- lua language server for neovim
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
       -- -- (ruff_lsp)
-      -- lspconfig.ruff_lsp.setup({})
+      lspconfig.ruff_lsp.setup({})
       -- pyright
       lspconfig.pyright.setup({})
       lsp.setup()
@@ -92,27 +92,6 @@ return {
       local noice = require('noice')
       vim.lsp.handlers['textDocument/hover'] = noice.hover
       vim.lsp.handlers['textDocument/signatureHelp'] = noice.signature
-      -- Make sure you setup `cmp` after lsp-zero
-
-
-      -- local cmp = require('cmp')
-      -- local lspkind = require('lspkind')
-
-      -- cmp.setup({
-      -- formatting = {
-      --   -- changing the order of fields so the icon is the first
-      --
-      --   -- here is where the change happens
-      --   format = lspkind.cmp_format({
-      --     mode = 'symbol_text',
-      --     -- The function below will be called before any actual modifications from lspkind
-      --     -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      --     before = function (entry, vim_item)
-      --       return vim_item
-      --     end
-      --   })
-      -- }
-      -- })
     end
   }
 }

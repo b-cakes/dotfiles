@@ -85,8 +85,10 @@ plugins=(
     zsh-autosuggestions
 )
 
+
 source $ZSH/oh-my-zsh.sh
 
+bindkey '\t' autosuggest-accept
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
