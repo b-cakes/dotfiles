@@ -43,10 +43,12 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
+      'onsails/lspkind.nvim',
     },
 
     opts = function()
       local cmp = require("cmp")
+      local lspkind = require('lspkind')
 
       return {
 
@@ -67,8 +69,12 @@ return {
           }),
           documentation = cmp.config.window.bordered({
             border = "rounded",
-            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+            -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
           }),
+        },
+
+        performance = {
+          max_view_entries = 8,
         },
 
         mapping = cmp.mapping.preset.insert({
@@ -92,12 +98,11 @@ return {
           { name = "path" },
         }),
 
-        experimental = {
-          ghost_text = {
-            hl_group = "LspCodeLens",
-          },
+
+        formatting = {
+          format = lspkind.cmp_format(),
         },
       }
-    end,
+    end
   },
 }

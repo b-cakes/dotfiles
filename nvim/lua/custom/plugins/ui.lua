@@ -11,10 +11,11 @@ return {
         theme = "auto",
         component_separators = { left = " | ", right = " | "},
         section_separators = { left = "█ ", right = " █"  },
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
           statusline = 100,
         },
+        disabled_filetypes = { "alpha" }
       },
       sections = {
         lualine_a = {
@@ -23,7 +24,9 @@ return {
         lualine_b = {
           { "branch" },
           { "fancy_diff" },
-          { "filename" },
+          { "filename",
+            filetype_names = { alpha = "Dashboard" },
+          },
           { "fancy_diagnostics" },
         },
         lualine_c = {
@@ -38,7 +41,29 @@ return {
         lualine_z = {
           { "fancy_lsp_servers" }
         },
-      }
+      },
+
+      winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+          { 'filename', path = 4 },
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
+
+      inactive_winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+          { 'filename', path = 4 },
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
     },
   },
 
@@ -54,33 +79,36 @@ return {
     },
   },
 
-  -- float/popup ui 
+  -- float/popup ui for code actions 
   {'stevearc/dressing.nvim'},
 
   -- UI notifications
   { 'folke/noice.nvim',
     opts = {
+
+      popupmenu = {
+        kind_icons = true
+      },
+
       lsp = {
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
-        hover = {
-          enabled = false,
-        },
-        signature = {
-          enabled = false,
-        },
+        -- hover = {
+        --   enabled = true,
+        -- },
+        -- signature = {
+        --   enabled = true,
+        -- },
       },
       -- you can enable a preset for easier configuration
       presets = {
-        bottom_search = false, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
+        lsp_doc_border = true, -- add a border to hover docs and signature help
       },
+
       views = {
         cmdline_popup = {
           position = {
@@ -118,22 +146,6 @@ return {
     dependencies = {
       { 'rcarriga/nvim-notify' },
       { 'MunifTanjim/nui.nvim' },
-    },
-  },
-
-  -- Sidebar that displays the datetime, git status, and active buffers.
-  {
-    'sidebar-nvim/sidebar.nvim',
-    opts = {
-      sections = {
-        'datetime',
-        'buffers'
-      },
-      initial_width = 100,
-      hide_statusline = false,
-      datetime = {
-        clocks = { { name = 'Local'} },
-      },
     },
   },
 }

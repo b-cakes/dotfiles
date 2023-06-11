@@ -6,63 +6,36 @@ return {
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
-    config = function()
-      -- This is where you modify the settings for lsp-zero
-      -- Note: autocompletion settings will not take effect
-
-      require('lsp-zero.settings').preset({})
-    end
-  },
-
-  -- LSP
-  {
-    'neovim/nvim-lspconfig',
-    cmd = 'LspInfo',
-    event = {'BufReadPre', 'BufNewFile'},
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'williamboman/mason-lspconfig.nvim'},
-      {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {                                      -- Optional
         'williamboman/mason.nvim',
         build = function()
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
-      -- {'jose-elias-alvarez/null-ls.nvim'},
-      {'onsails/lspkind.nvim'},
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
+      {'folke/noice.nvim'},     -- Optional
+      -- {'onsails/lspkind.nvim'},
     },
+
     config = function()
       -- This is where all the LSP shenanigans will live
 
-      require('mason').setup({
-        ui = {
-          border = 'rounded',
-        }
-      })
+      require('mason').setup({})
 
-      -- require("mason-null-ls").setup({
-      --   ensure_installed = {
-      --     -- Opt to list sources here, when available in mason.
-      --   },
-      --   automatic_installation = false,
-      --   handlers = {},
-      -- })
-
-      -- local null_ls = require('null-ls')
-      --
-      -- null_ls.setup({
-      --   sources = {
-      --     -- Anything not supported by mason.
-      --     null_ls.builtins.formatting.ruff,
-      --     null_ls.builtins.diagnostics.ruff,
-      --   }
-      -- })
 
       local lsp = require('lsp-zero')
 
----@diagnostic disable-next-line: unused-local
+      ---@diagnostic disable-next-line: unused-local
       lsp.on_attach(function(client, bufnr)
-        lsp.default_keymaps({buffer = bufnr})
+        lsp.default_keymaps({ buffer = bufnr })
         local nmap = function(keys, func, desc)
           if desc then
             desc = 'LSP: ' .. desc
@@ -107,42 +80,39 @@ return {
         info = '»'
       })
 
-      -- (Optional) Configure lua language server for neovim
-      require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-      -- (ruff_lsp)
-      require('lspconfig').ruff_lsp.setup({
-        init_options = {
-          settings = {
-            args = {},
-          },
-        },
-      })
-
-
+      local lspconfig = require('lspconfig')
+      -- lua language server for neovim
+      lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+      -- -- (ruff_lsp)
+      -- lspconfig.ruff_lsp.setup({})
+      -- pyright
+      lspconfig.pyright.setup({})
       lsp.setup()
+
+      local noice = require('noice')
+      vim.lsp.handlers['textDocument/hover'] = noice.hover
+      vim.lsp.handlers['textDocument/signatureHelp'] = noice.signature
       -- Make sure you setup `cmp` after lsp-zero
 
 
-      local cmp = require('cmp')
-      local lspkind = require('lspkind')
+      -- local cmp = require('cmp')
+      -- local lspkind = require('lspkind')
 
-      cmp.setup({
-        formatting = {
-          -- changing the order of fields so the icon is the first
-
-          -- here is where the change happens
-          format = lspkind.cmp_format({
-            mode = 'symbol_text',
-            -- The function below will be called before any actual modifications from lspkind
-            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-            before = function (entry, vim_item)
-              return vim_item
-            end
-          })
-        }
-      })
+      -- cmp.setup({
+      -- formatting = {
+      --   -- changing the order of fields so the icon is the first
+      --
+      --   -- here is where the change happens
+      --   format = lspkind.cmp_format({
+      --     mode = 'symbol_text',
+      --     -- The function below will be called before any actual modifications from lspkind
+      --     -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      --     before = function (entry, vim_item)
+      --       return vim_item
+      --     end
+      --   })
+      -- }
+      -- })
     end
   }
 }
-

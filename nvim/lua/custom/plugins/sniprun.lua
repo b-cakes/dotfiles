@@ -1,6 +1,7 @@
 return {
     {
         'michaelb/sniprun',
+        lazy = true,
         build = 'bash ./install.sh',
         config = function ()
             require('sniprun').setup({
