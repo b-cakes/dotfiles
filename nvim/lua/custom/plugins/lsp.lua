@@ -16,10 +16,65 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      { 'L3MON4D3/LuaSnip' },
+      'L3MON4D3/LuaSnip',
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+      'onsails/lspkind.nvim',
     },
     config = function()
+
       require('lsp-zero.cmp').extend()
+      local cmp = require('cmp')
+      local cmp_action = require('lsp-zero.cmp').action()
+      local lspkind = require('lspkind')
+
+      cmp.setup({
+
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
+
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+
+        window = {
+          completion = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+          }),
+          documentation = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+          }),
+        },
+
+        performance = {
+          max_view_entries = 8,
+        },
+
+        mapping = cmp.mapping.preset.insert({
+          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        }),
+
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
+
+        formatting = {
+          format = lspkind.cmp_format(),
+        },
+
+      })
+
     end
   },
 
@@ -38,8 +93,6 @@ return {
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
-      -- Autocompletion
-      { 'folke/noice.nvim' }, -- Optional
     },
 
     config = function()
@@ -106,10 +159,6 @@ return {
       lspconfig.pyright.setup({})
 
       lsp.setup()
-
-      local noice = require('noice')
-      vim.lsp.handlers['textDocument/hover'] = noice.hover
-      vim.lsp.handlers['textDocument/signatureHelp'] = noice.signature
     end
   }
 }
