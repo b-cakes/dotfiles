@@ -6,23 +6,40 @@ return {
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
+    lazy = true,
+    config = function()
+      require('lsp-zero.settings').preset({})
+    end
+  },
+
+  {
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = {
+      { 'L3MON4D3/LuaSnip' },
+    },
+    config = function()
+      require('lsp-zero.cmp').extend()
+    end
+  },
+
+  {
+    'neovim/nvim-lspconfig',
+    cmp = 'LspInfo',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
+      { 'hrsh7th/cmp-nvim-lsp' },            -- Required
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      {
+                                             -- Optional
         'williamboman/mason.nvim',
         build = function()
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-      {'folke/noice.nvim'},     -- Optional
-      -- {'onsails/lspkind.nvim'},
+      { 'folke/noice.nvim' }, -- Optional
     },
 
     config = function()
@@ -83,10 +100,11 @@ return {
       local lspconfig = require('lspconfig')
       -- lua language server for neovim
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-      -- -- (ruff_lsp)
+      -- ruff_lsp
       lspconfig.ruff_lsp.setup({})
       -- pyright
       lspconfig.pyright.setup({})
+
       lsp.setup()
 
       local noice = require('noice')
