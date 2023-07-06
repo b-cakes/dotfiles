@@ -87,7 +87,6 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },            -- Required
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
       {
-                                             -- Optional
         'williamboman/mason.nvim',
         build = function()
           pcall(vim.cmd, 'MasonUpdate')

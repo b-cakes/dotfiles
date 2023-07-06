@@ -15,10 +15,10 @@ return {
                     ["cmp.entry.get_documentation"] = true,
                 },
                 hover = {
-                  enabled = false,
+                    enabled = false,
                 },
                 signature = {
-                  enabled = false,
+                    enabled = false,
                 },
             },
             health = {
@@ -27,7 +27,7 @@ return {
             -- you can enable a preset for easier configuration
             presets = {
                 long_message_to_split = true, -- long messages will be sent to a split
-                lsp_doc_border = true, -- add a border to hover docs and signature help
+                lsp_doc_border = false, -- add a border to hover docs and signature help
             },
 
             views = {
