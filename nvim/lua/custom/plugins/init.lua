@@ -1,4 +1,5 @@
 return {
+  -- These are all plugins with no configuration.
 
   -- -- Git related plugins
   -- { 'tpope/vim-fugitive' },
@@ -11,8 +12,4 @@ return {
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim' },
   { 'nvim-telescope/telescope-file-browser.nvim' },
-
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-
 }
