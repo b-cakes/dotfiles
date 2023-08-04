@@ -1,0 +1,14 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[conda]
+ignore_base = false
+
+[package]
+format = 'is [$symbol $version ]($style)'
+style = '208'
+
+[python]
+format = 'via [${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+
