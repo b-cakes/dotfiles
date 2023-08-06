@@ -2,7 +2,6 @@ return {
 
     { -- tokyonight
         'folke/tokyonight.nvim',
-        priority = 1000,
         config = function ()
             require('tokyonight').setup({
                 style = 'storm',
@@ -21,7 +20,6 @@ return {
                     -- hl.CursorLine = {bg = bg_pu}
                 end,
             })
-            vim.cmd.colorscheme 'tokyonight'
         end,
     },
 
