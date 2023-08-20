@@ -85,15 +85,15 @@ return {
             end
           end, { "i", "s" }),
 
-          -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-          --   if cmp.visible() then
-          --     cmp.select_prev_item()
-          --   elseif luasnip.jumpable(-1) then
-          --     luasnip.jump(-1)
-          --   else
-          --     fallback()
-          --   end
-          -- end, { "i", "s" }),-- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),-- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
 
         sources = cmp.config.sources({

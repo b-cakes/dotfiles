@@ -31,6 +31,11 @@ return {
     config = function ()
       require('rose-pine').setup({
         variant = 'moon',
+        bold_vert_split = true,
+        dim_nc_background = true,
+        groups = {
+          border = 'foam',
+        },
       })
       vim.cmd.colorscheme('rose-pine')
     end,
