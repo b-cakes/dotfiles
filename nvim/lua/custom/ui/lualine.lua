@@ -11,12 +11,15 @@ return {
             options = {
                 theme = "auto",
                 component_separators = { left = " | ", right = " | "},
-                section_separators = { left = "█ ", right = " █"  },
+                section_separators = { left = "█ ", right = " █"  },
                 globalstatus = true,
                 refresh = {
                     statusline = 100,
                 },
-                disabled_filetypes = { "alpha" }
+                disabled_filetypes = {
+                    statusline = { "alpha" },
+                    winbar = { "alpha" },
+                }
             },
             sections = {
                 lualine_a = {
