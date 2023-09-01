@@ -2,6 +2,8 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
 
+
+
 return {
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -101,6 +103,7 @@ return {
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
+          { name = 'nvim_lsp_signature_help' }
         }),
 
         formatting = {

@@ -65,6 +65,12 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
+alias ls='exa --icons'
+alias la='exa -a --icons'
+alias ll='exa -l -a --icons'
+alias l='exa -l -a --icons -h --no-permissions --no-user'
+alias rich='rich --syntax'
+alias py='python3'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.cmd.colorscheme('randomhue2')
+
 -- Set highlight on search
 vim.o.hlsearch = false
 

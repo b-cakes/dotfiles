@@ -29,6 +29,22 @@ return {
     },
 
     {
+        'echasnovski/mini.cursorword',
+        version = false,
+        config = function ()
+            require("mini.cursorword").setup({})
+        end
+    },
+
+    {
+        'echasnovski/mini.files',
+        version = false,
+        config = function ()
+            require("mini.files").setup({})
+        end
+    },
+
+    {
         'echasnovski/mini.surround',
         version = false,
         lazy = true,
@@ -40,7 +56,6 @@ return {
     {
         'echasnovski/mini.colors',
         version = false,
-        lazy = true,
         config = function ()
             require('mini.colors').setup({})
         end
@@ -49,7 +64,6 @@ return {
     {
         'echasnovski/mini.hues',
         version = false,
-        lazy = true,
         -- config = function ()
         --     require('mini.hues').setup({})
         -- end

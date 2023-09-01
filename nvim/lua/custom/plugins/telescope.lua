@@ -15,41 +15,67 @@ return {
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons"
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons"
     },
   },
 
   -- symbol picker, ':Telescope symbols' 
   { 'nvim-telescope/telescope-symbols.nvim' },
 
-    -- [[ Configure Telescope ]]
-    -- See `:help telescope` and `:help telescope.setup()`
-    require('telescope').setup {
-        extensions = {
-            file_browser = {
-                initial_mode = 'insert',
-                hijack_netrw = true,
-                hidden = true,
-                -- TODO: add which_key type menu
-            },
-        },
+  -- [[ Configure Telescope ]]
+  -- See `:help telescope` and `:help telescope.setup()`
+  require('telescope').setup {
+    extensions = {
+      file_browser = {
+        initial_mode = 'insert',
+        hijack_netrw = true,
+        hidden = true,
+        -- TODO: add which_key type menu
+      },
+
+      fzf = {
+        fuzzy = true,
+        override_generic_sorther = true,
+        override_file_sorter = true,
+        case_mode = "smart_case",
+      },
     },
 
-    -- Enable telescope file_browser, if installed
-    require('telescope').load_extension 'file_browser',
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+        previewer = false,
+      },
+      buffers = { theme = "dropdown" },
+      help_tags = { theme = "dropdown" },
+      grep_string = { 
+        theme = "dropdown",
+        previewer = false,
+      },
+      live_grep = { theme = "dropdown" },
+    },
 
-    -- Enable telescope fzf native, if installed
-    pcall(require('telescope').load_extension, 'fzf'),
+  },
 
-    -- See `:help telescope.builtin`
-    vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' }),
-    vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' }),
-    vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' }),
-    vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' }),
-    vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' }),
-    vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' }),
-    vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' }),
-    vim.keymap.set('n', '<leader>fm', ':Telescope file_browser<CR>', { desc = '[F]ile [M]anager' }),
+  -- Enable telescope file_browser, if installed
+  require('telescope').load_extension 'file_browser',
+
+  -- Enable telescope fzf native, if installed
+  pcall(require('telescope').load_extension, 'fzf'),
+
+  -- See `:help telescope.builtin`
+  vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' }),
+  -- vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' }),
+  vim.keymap.set('n', '<leader><space>', ':Telescope buffers theme=dropdown<CR>', { desc = '[ ] Find existing buffers' }),
+  -- vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' }),
+  vim.keymap.set('n', '<leader>sf', ':Telescope find_files theme=dropdown<CR>', { desc = '[S]earch [F]iles' }),
+  -- vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' }),
+  vim.keymap.set('n', '<leader>sh', ':Telescope help_tags theme=dropdown<CR>', { desc = '[S]earch [H]elp' }),
+  -- vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' }),
+  vim.keymap.set('n', '<leader>sw', ':Telescope grep_string theme=dropdown<CR>', { desc = '[S]earch current [W]ord' }),
+  vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' }),
+  vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' }),
+  vim.keymap.set('n', '<leader>fm', ':Telescope file_browser theme=dropdown<CR>', { desc = '[F]ile [M]anager' }),
 }

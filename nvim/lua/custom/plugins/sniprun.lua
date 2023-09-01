@@ -1,16 +1,16 @@
 return {
-    {
-        'michaelb/sniprun',
-        lazy = true,
-        build = 'bash ./install.sh',
-        config = function ()
-            require('sniprun').setup({
-                display = {
-                    'Terminal',
-                },
-            })
-        end,
-    },
-
-    vim.keymap.set('n', '<leader>rf', ':%SnipRun<CR>', {desc = 'Run File'}),
+--     {
+--         'michaelb/sniprun',
+--         lazy = true,
+--         build = 'bash ./install.sh',
+--         config = function ()
+--             require('sniprun').setup({
+--                 display = {
+--                     'Terminal',
+--                 },
+--             })
+--         end,
+--     },
+--
+--     vim.keymap.set('n', '<leader>rf', ':%SnipRun<CR>', {desc = 'Run File'}),
 }
