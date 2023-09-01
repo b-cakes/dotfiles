@@ -47,12 +47,14 @@ return {
       find_files = {
         theme = "dropdown",
         previewer = false,
+        selection_caret = "󰜴 ",
       },
       buffers = { theme = "dropdown" },
       help_tags = { theme = "dropdown" },
       grep_string = { 
         theme = "dropdown",
         previewer = false,
+        selection_caret = "󰜴 ",
       },
       live_grep = { theme = "dropdown" },
     },
