@@ -1,3 +1,8 @@
+# Starship is set as the default prompt. 
+# I'm no longer using conda and have moved to poetry instead. 
+# I'm utilizing oh-my-zsh plugins but am storing aliases in this file.  
+ 
+ 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -38,18 +43,19 @@ plugins=(
     zsh-syntax-highlighting 
     zsh-interactive-cd 
     zsh-autosuggestions
-    iterm2
 )
 
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/Users/johnharpt/.local/bin:$PATH"
 
-# use TAB for confirming autosuggestions
+# Use TAB for confirming autosuggestions
+# Uncomment the below to use TAB instead.
 bindkey '\t' autosuggest-accept
 
 # Preferred editor for local and remote sessions
