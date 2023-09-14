@@ -55,8 +55,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/Users/johnharpt/.local/bin:$PATH"
 
 # Use TAB for confirming autosuggestions
-# Uncomment the below to use TAB instead.
-bindkey '\t' autosuggest-accept
+# Uncomment the below to use TAB for autosuggestions.
+# bindkey '\t' autosuggest-accept
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

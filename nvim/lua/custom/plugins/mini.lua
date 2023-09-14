@@ -7,7 +7,6 @@ return {
             require('mini.basics').setup({
                 options = { win_borders = 'single' },
                 mappings = { windows = true },
-                autocommands = { relnum_in_visual_mode = true },
             })
         end
     },

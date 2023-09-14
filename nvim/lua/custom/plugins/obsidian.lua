@@ -13,7 +13,7 @@ return {
 
   opts = {
     dir = "~/journal",  -- no need to call 'vim.fn.expand' here
-    daily_notes = { folder = "journal/Daily" },
+    daily_notes = { folder = "Daily" },
     completion = {
       -- If using nvim-cmp, otherwise set to false
       nvim_cmp = true,
