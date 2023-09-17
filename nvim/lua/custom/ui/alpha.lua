@@ -7,7 +7,7 @@ local M = {
 
 function M.config()
 	local headers = require("custom.headers")
-	local quotes = require("custom.quotes")
+	-- local quotes = require("custom.quotes")
 	local theme = require("alpha.themes.theta")
 
 	math.randomseed(os.time())
@@ -47,43 +47,43 @@ function M.config()
 	end
 
 	-- selects a random quote from lua/custom/quotes.lua
-	local function get_footer(quotes, width)
-		local quote_text = quotes[math.random(#quotes)]
-
-		local max_width = width or 35
-
-		local tbl = {}
-		for _, text in ipairs(quote_text) do
-			local padded_text = require("custom.utils").pad_string(text, max_width, "right")
-			table.insert(tbl, { type = "text", val = padded_text, opts = { hl = "Comment", position = "center" } })
-		end
-
-		return {
-			type = "group",
-			val = tbl,
-			opts = {},
-		}
-	end
+	-- local function get_footer(quotes, width)
+	-- 	local quote_text = quotes[math.random(#quotes)]
+	--
+	-- 	local max_width = width or 35
+	--
+	-- 	local tbl = {}
+	-- 	for _, text in ipairs(quote_text) do
+	-- 		local padded_text = require("custom.utils").pad_string(text, max_width, "right")
+	-- 		table.insert(tbl, { type = "text", val = padded_text, opts = { hl = "Comment", position = "center" } })
+	-- 	end
+	--
+	-- 	return {
+	-- 		type = "group",
+	-- 		val = tbl,
+	-- 		opts = {},
+	-- 	}
+	-- end
 
 	-- Info section
-	local function get_info()
-		local lazy_stats = require("lazy").stats()
-		local total_plugins = " " .. lazy_stats.loaded .. "/" .. lazy_stats.count .. " packages"
-		local datetime = os.date(" %A %B %d")
-		local version = vim.version()
-		local nvim_version_info = "ⓥ " .. version.major .. "." .. version.minor .. "." .. version.patch
-
-		local info_string = datetime .. "  |  " .. total_plugins .. "  |  " .. nvim_version_info
-
-		return {
-			type = "text",
-			val = info_string,
-			opts = {
-				hl = "Delimiter",
-				position = "center",
-			},
-		}
-	end
+	-- local function get_info()
+	-- 	local lazy_stats = require("lazy").stats()
+	-- 	local total_plugins = " " .. lazy_stats.loaded .. "/" .. lazy_stats.count .. " packages"
+	-- 	local datetime = os.date(" %A %B %d")
+	-- 	local version = vim.version()
+	-- 	local nvim_version_info = "ⓥ " .. version.major .. "." .. version.minor .. "." .. version.patch
+	--
+	-- 	local info_string = datetime .. "  |  " .. total_plugins .. "  |  " .. nvim_version_info
+	--
+	-- 	return {
+	-- 		type = "text",
+	-- 		val = info_string,
+	-- 		opts = {
+	-- 			hl = "Delimiter",
+	-- 			position = "center",
+	-- 		},
+	-- 	}
+	-- end
 
 	-- Links / tools
 	local dashboard = require("alpha.themes.dashboard")
@@ -98,14 +98,14 @@ function M.config()
 	}
 
 	theme.config.layout = {
-		{ type = "padding", val = 4 },
-		get_header({ headers.ragnarok }),
-		{ type = "padding", val = 1 },
+		{ type = "padding", val = 10 },
+		get_header({ headers.ragnarok, headers.shrek }),
+		{ type = "padding", val = 5 },
 		links,
-		{ type = "padding", val = 1 },
-		get_info(),
-		{ type = "padding", val = 3 },
-		get_footer({ quotes.roar, quotes.path, quotes.loki, quotes.grimsley }, 50),
+		-- { type = "padding", val = 1 },
+		-- get_info(),
+		-- { type = "padding", val = 3 },
+		-- get_footer({ quotes.roar, quotes.path, quotes.loki, quotes.grimsley }, 50),
 	}
 	require("alpha").setup(theme.config)
 end

@@ -10,5 +10,6 @@ config.color_scheme = "rose-pine"
 config.enable_tab_bar = false
 config.font = wezterm.font 'Fira Code'
 config.underline_position = -2
+config.enable_kitty_graphics = true
 
 return config

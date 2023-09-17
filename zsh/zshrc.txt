@@ -66,4 +66,4 @@ alias py='python3'
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # sourcing startship
-eval "$(starship init zsh)"
+e

@@ -44,18 +44,43 @@ return {
     },
 
     pickers = {
+
       find_files = {
         theme = "dropdown",
+        initial_mode = 'normal',
         previewer = false,
         selection_caret = "󰜴 ",
+        mappings = {
+          i = { ["<C-y>"] = require('telescope.actions.layout').toggle_preview },
+          n = { ["<C-y>"] = require('telescope.actions.layout').toggle_preview },
+        },
       },
-      buffers = { theme = "dropdown" },
-      help_tags = { theme = "dropdown" },
-      grep_string = { 
+
+      buffers = {
+        theme = "dropdown",
+        initial_mode = 'normal',
+        previewer = false,
+        selection_caret = "󰜴 ",
+        mappings = {
+          i = { ["<C-y>"] = require('telescope.actions.layout').toggle_preview },
+          n = { ["<C-y>"] = require('telescope.actions.layout').toggle_preview },
+        },
+      },
+
+      help_tags = {
         theme = "dropdown",
         previewer = false,
         selection_caret = "󰜴 ",
+        mappings = {
+          i = { ["<C-y>"] = require('telescope.actions.layout').toggle_preview },
+          n = { ["<C-y>"] = require('telescope.actions.layout').toggle_preview },
+        },
       },
+
+      grep_string = {
+        selection_caret = "󰜴 ",
+      },
+
       live_grep = { theme = "dropdown" },
     },
 
@@ -75,8 +100,7 @@ return {
   vim.keymap.set('n', '<leader>sf', ':Telescope find_files theme=dropdown<CR>', { desc = '[S]earch [F]iles' }),
   -- vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' }),
   vim.keymap.set('n', '<leader>sh', ':Telescope help_tags theme=dropdown<CR>', { desc = '[S]earch [H]elp' }),
-  -- vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' }),
-  vim.keymap.set('n', '<leader>sw', ':Telescope grep_string theme=dropdown<CR>', { desc = '[S]earch current [W]ord' }),
+  vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' }),
   vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' }),
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' }),
   vim.keymap.set('n', '<leader>fm', ':Telescope file_browser theme=dropdown<CR>', { desc = '[F]ile [M]anager' }),

@@ -14,3 +14,5 @@ end, { noremap = false, expr = true })
 vim.api.nvim_set_keymap('n', '<leader>on', ':ObsidianNew ', {desc = 'ObsidianNew'})
 vim.api.nvim_set_keymap('n', '<leader>oq', ':ObsidianQuickSwitch<CR>', {desc = 'ObsidianQuickSwitch'})
 vim.api.nvim_set_keymap('n', '<leader>os', ':ObsidianSearch<CR>', {desc = 'ObsidianSearch'})
+
+vim.api.nvim_set_keymap('n', '<leader>od', ':cd /Users/johnharpt/journal<CR>', {desc = 'Go to Obsidian vault'})
