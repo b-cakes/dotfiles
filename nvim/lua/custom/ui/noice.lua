@@ -6,11 +6,20 @@ return {
             { 'MunifTanjim/nui.nvim' },
         },
         opts = {
+            cmdline = {
+                view = "cmdline",
+            },
             lsp = {
                 override = {
-                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                    ["vim.lsp.util.stylize_markdown"] = true,
-                    ["cmp.entry.get_documentation"] = true,
+                    ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+                    ["vim.lsp.util.stylize_markdown"] = false,
+                    ["cmp.entry.get_documentation"] = false,
+                },
+                hover = {
+                    enabled = false,
+                },
+                signature = {
+                    enabled = false,
                 },
             },
             health = {
@@ -19,11 +28,8 @@ return {
             -- you can enable a preset for easier configuration
             presets = {
                 bottom_search = true,
-                lsp_doc_border = true, -- add a border to hover docs and signature help
+                lsp_doc_border = false, -- add a border to hover docs and signature help
             },
-            cmdline = {
-                view = "cmdline",
-            }
         },
     },
 }

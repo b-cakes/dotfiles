@@ -10,3 +10,16 @@ vim.api.nvim_create_autocmd("User", {
 	pattern = "AlphaClosed",
 	command = "set laststatus=3",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function ()
+		vim.opt_local.textwidth = 120
+		vim.opt_local.wrap = true
+	end
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "randomhue",
+	command = "hi link TelescopeNormal NormalFloat | hi link TelescopePromptNormal NormalFloat",
+})

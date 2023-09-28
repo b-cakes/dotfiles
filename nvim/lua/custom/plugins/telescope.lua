@@ -26,7 +26,7 @@ return {
 
   -- [[ Configure Telescope ]]
   -- See `:help telescope` and `:help telescope.setup()`
-  require('telescope').setup {
+  require("telescope").setup {
     extensions = {
       file_browser = {
         initial_mode = 'insert',
@@ -87,10 +87,10 @@ return {
   },
 
   -- Enable telescope file_browser, if installed
-  require('telescope').load_extension 'file_browser',
+  require("telescope").load_extension 'file_browser',
 
   -- Enable telescope fzf native, if installed
-  pcall(require('telescope').load_extension, 'fzf'),
+  pcall(require("telescope").load_extension, 'fzf'),
 
   -- See `:help telescope.builtin`
   vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' }),
