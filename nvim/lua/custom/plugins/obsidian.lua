@@ -1,9 +1,8 @@
 return {
   "epwalsh/obsidian.nvim",
-  lazy = true,
+  lazy = false,
   -- event = { "BufReadPre path/to/my-vault/**.md" },
   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
-  event = { "DirChangedPre", "DirChanged" },
   dependencies = {
 
     "nvim-lua/plenary.nvim", -- required
@@ -22,7 +21,7 @@ return {
       -- Where to put new notes created from completion. Valid options are
       --  * "current_dir" - put new notes in same directory as the current buffer.
       --  * "notes_subdir" - put new notes in the default notes subdirectory.
-      new_notes_location = "current_dir",
+      new_notes_location = "Notes",
 
       -- Whether to add the output of the node_id_func to new notes in autocompletion.
       -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.

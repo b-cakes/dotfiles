@@ -90,7 +90,7 @@ function M.config()
 	local links = {
 		type = "group",
 		val = {
-			dashboard.button("SPC f m", "  File Manager"),
+			dashboard.button("SPC m f", "  File Manager"),
 			dashboard.button("l", "鈴 Lazy", "<cmd>Lazy<CR>"),
 			dashboard.button("t", "  Telescope", "<cmd>Telescope<CR>"),
 		},

@@ -12,15 +12,6 @@ return {
     end,
   },
 
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons"
-    },
-  },
-
   -- symbol picker, ':Telescope symbols' 
   { 'nvim-telescope/telescope-symbols.nvim' },
 
@@ -28,12 +19,6 @@ return {
   -- See `:help telescope` and `:help telescope.setup()`
   require("telescope").setup {
     extensions = {
-      file_browser = {
-        initial_mode = 'insert',
-        hijack_netrw = true,
-        hidden = true,
-        -- TODO: add which_key type menu
-      },
 
       fzf = {
         fuzzy = true,
@@ -86,9 +71,6 @@ return {
 
   },
 
-  -- Enable telescope file_browser, if installed
-  require("telescope").load_extension 'file_browser',
-
   -- Enable telescope fzf native, if installed
   pcall(require("telescope").load_extension, 'fzf'),
 
@@ -103,5 +85,5 @@ return {
   vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' }),
   vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' }),
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' }),
-  vim.keymap.set('n', '<leader>fm', ':Telescope file_browser theme=dropdown<CR>', { desc = '[F]ile [M]anager' }),
+  vim.keymap.set('n', '<leader>th', require('telescope.builtin').highlights, { desc = '[T]elescope [H]ighlights' }),
 }

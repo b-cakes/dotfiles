@@ -1,7 +1,7 @@
 -- Made with 'mini.colors' module of https://github.com/echasnovski/mini.nvim
 
 if vim.g.colors_name ~= nil then vim.cmd('highlight clear') end
-vim.g.colors_name = "tokyo-ish"
+vim.g.colors_name = "tokyo-ishrevtest"
 
 -- Highlight groups
 local hi = vim.api.nvim_set_hl
@@ -37,7 +37,7 @@ hi(0, "@string.special", { link = "SpecialChar" })
 hi(0, "@structure", { link = "Structure" })
 hi(0, "@symbol", { link = "Keyword" })
 hi(0, "@text.danger", { link = "ErrorMsg" })
-hi(0, "@text.emphasis", { italic = true, fg = "#a6d5a8" })
+hi(0, "@text.emphasis", { fg = "#e3b5e3", italic = true })
 hi(0, "@text.literal", { link = "Comment" })
 hi(0, "@text.note", { link = "MoreMsg" })
 hi(0, "@text.reference", { link = "Identifier" })
@@ -225,6 +225,7 @@ hi(0, "DiffLine", { bg = "#1d1b47" })
 hi(0, "DiffNewFile", { link = "diffAdded" })
 hi(0, "DiffText", { bg = "#4c5767" })
 hi(0, "Directory", { fg = "#94cff4" })
+hi(0, "DressingSelectIdx", { link = "Special" })
 hi(0, "EndOfBuffer", { fg = "#4c5767" })
 hi(0, "Error", { bg = "#410d19" })
 hi(0, "ErrorMsg", { fg = "#f6b2ba" })
@@ -242,12 +243,26 @@ hi(0, "Function", { fg = "#94cff4" })
 hi(0, "GitSignsAdd", { fg = "#a6d5a8" })
 hi(0, "GitSignsAddInline", { link = "GitSignsAdd" })
 hi(0, "GitSignsAddLn", { link = "GitSignsAdd" })
+hi(0, "GitSignsAddLnInline", { fg = "#a6d5a8" })
+hi(0, "GitSignsAddNr", { fg = "#a6d5a8" })
+hi(0, "GitSignsAddPreview", { bg = "#002d08" })
 hi(0, "GitSignsChange", { fg = "#d1c98c" })
 hi(0, "GitSignsChangeInline", { link = "GitSignsChange" })
 hi(0, "GitSignsChangeLn", { link = "GitSignsChange" })
+hi(0, "GitSignsChangeLnInline", { fg = "#d1c98c" })
+hi(0, "GitSignsChangeNr", { fg = "#d1c98c" })
+hi(0, "GitSignsChangedelete", { fg = "#d1c98c" })
+hi(0, "GitSignsChangedeleteLn", { fg = "#d1c98c" })
+hi(0, "GitSignsChangedeleteNr", { fg = "#d1c98c" })
+hi(0, "GitSignsCurrentLineBlame", { fg = "#4c5767" })
 hi(0, "GitSignsDelete", { fg = "#f6b2ba" })
 hi(0, "GitSignsDeleteInline", { link = "GitSignsDelete" })
 hi(0, "GitSignsDeleteLn", { link = "GitSignsDelete" })
+hi(0, "GitSignsDeleteLnInline", { fg = "#f6b2ba" })
+hi(0, "GitSignsDeleteNr", { fg = "#f6b2ba" })
+hi(0, "GitSignsDeletePreview", { bg = "#410d19" })
+hi(0, "GitSignsDeleteVirtLn", { bg = "#410d19" })
+hi(0, "GitSignsDeleteVirtLnInLine", { fg = "#f6b2ba" })
 hi(0, "GitSignsStagedAdd", { fg = "#536a54" })
 hi(0, "GitSignsStagedAddLn", { fg = "#536a54" })
 hi(0, "GitSignsStagedAddNr", { fg = "#536a54" })
@@ -262,9 +277,33 @@ hi(0, "GitSignsStagedDeleteLn", { fg = "#7b595d" })
 hi(0, "GitSignsStagedDeleteNr", { fg = "#7b595d" })
 hi(0, "GitSignsStagedTopdelete", { fg = "#7b595d" })
 hi(0, "GitSignsStagedTopdeleteNr", { fg = "#7b595d" })
+hi(0, "GitSignsTopdelete", { fg = "#f6b2ba" })
+hi(0, "GitSignsTopdeleteNr", { fg = "#f6b2ba" })
 hi(0, "GitSignsUntracked", { fg = "#94cff4" })
 hi(0, "GitSignsUntrackedInline", { link = "GitSignsUntracked" })
 hi(0, "GitSignsUntrackedLn", { link = "GitSignsUntracked" })
+hi(0, "GitSignsUntrackedNr", { fg = "#a6d5a8" })
+hi(0, "GitSignsVirtLnum", { bg = "#410d19" })
+hi(0, "HeaderGradient1", { fg = "#b9969d" })
+hi(0, "HeaderGradient10", { fg = "#7f93a6" })
+hi(0, "HeaderGradient11", { fg = "#7892a7" })
+hi(0, "HeaderGradient12", { fg = "#7292a8" })
+hi(0, "HeaderGradient13", { fg = "#6b91a9" })
+hi(0, "HeaderGradient14", { fg = "#6591aa" })
+hi(0, "HeaderGradient15", { fg = "#5e91ab" })
+hi(0, "HeaderGradient16", { fg = "#5890ac" })
+hi(0, "HeaderGradient17", { fg = "#5190ad" })
+hi(0, "HeaderGradient18", { fg = "#4b8fae" })
+hi(0, "HeaderGradient19", { fg = "#448faf" })
+hi(0, "HeaderGradient2", { fg = "#b3969e" })
+hi(0, "HeaderGradient20", { fg = "#3e8fb0" })
+hi(0, "HeaderGradient3", { fg = "#ac959f" })
+hi(0, "HeaderGradient4", { fg = "#a695a0" })
+hi(0, "HeaderGradient5", { fg = "#9f95a1" })
+hi(0, "HeaderGradient6", { fg = "#9994a2" })
+hi(0, "HeaderGradient7", { fg = "#9294a3" })
+hi(0, "HeaderGradient8", { fg = "#8c93a4" })
+hi(0, "HeaderGradient9", { fg = "#8593a5" })
 hi(0, "HopNextKey", { bold = true, fg = "#a6d5a8", nocombine = true })
 hi(0, "HopNextKey1", { bold = true, fg = "#f0ba94", nocombine = true })
 hi(0, "HopNextKey2", { bold = true, fg = "#a6aab0", nocombine = true })
@@ -333,6 +372,11 @@ hi(0, "LeapMatch", { bold = true, fg = "#a6d5a8", nocombine = true })
 hi(0, "LineNr", { fg = "#4c5767" })
 hi(0, "LspCodeLens", { link = "Comment" })
 hi(0, "LspCodeLensSeparator", { link = "Comment" })
+hi(0, "LspInfoBorder", { bold = true })
+hi(0, "LspInfoFiletype", { fg = "#c3c7cd" })
+hi(0, "LspInfoList", { fg = "#94cff4" })
+hi(0, "LspInfoTip", { fg = "#898d92" })
+hi(0, "LspInfoTitle", { fg = "#a8c9fb" })
 hi(0, "LspReferenceRead", { link = "LspReferenceText" })
 hi(0, "LspReferenceText", { bg = "#4c5767" })
 hi(0, "LspReferenceWrite", { link = "LspReferenceText" })
@@ -378,7 +422,12 @@ hi(0, "MiniClueTitle", { link = "FloatTitle" })
 hi(0, "MiniCompletionActiveParameter", { bg = "#4c5767" })
 hi(0, "MiniCursorword", { underline = true })
 hi(0, "MiniCursorwordCurrent", { underline = true })
+hi(0, "MiniFilesBorder", { bg = "#0e1724", fg = "#a8c9fb" })
+hi(0, "MiniFilesBorderModified", { bg = "#0e1724", fg = "#d1c98c" })
+hi(0, "MiniFilesDirectory", { fg = "#94cff4" })
 hi(0, "MiniFilesFile", { fg = "#c3c7cd" })
+hi(0, "MiniFilesNormal", { bg = "#0e1724", fg = "#c3c7cd" })
+hi(0, "MiniFilesTitle", { bg = "#0e1724", bold = true, fg = "#a8c9fb" })
 hi(0, "MiniFilesTitleFocused", { bg = "#0e1724", bold = true, fg = "#c3c7cd" })
 hi(0, "MiniHipatternsFixme", { bg = "#f6b2ba", bold = true, fg = "#1a2331" })
 hi(0, "MiniHipatternsHack", { bg = "#d1c98c", bold = true, fg = "#1a2331" })
@@ -560,9 +609,17 @@ hi(0, "NotifyINFOTitle", { link = "NotifyINFOBorder" })
 hi(0, "NotifyTRACEBorder", { fg = "#87d8d3" })
 hi(0, "NotifyTRACEIcon", { link = "NotifyTRACEBorder" })
 hi(0, "NotifyTRACETitle", { link = "NotifyTRACEBorder" })
+hi(0, "NotifyWARNBody14", { bg = "#1a2331", fg = "#212937" })
+hi(0, "NotifyWARNBody15", { bg = "#1a2331", fg = "#212937" })
 hi(0, "NotifyWARNBorder", { fg = "#d1c98c" })
+hi(0, "NotifyWARNBorder14", { fg = "#212a35" })
+hi(0, "NotifyWARNBorder15", { fg = "#212a35" })
 hi(0, "NotifyWARNIcon", { link = "NotifyWARNBorder" })
+hi(0, "NotifyWARNIcon14", { fg = "#212a35" })
+hi(0, "NotifyWARNIcon15", { fg = "#212a35" })
 hi(0, "NotifyWARNTitle", { link = "NotifyWARNBorder" })
+hi(0, "NotifyWARNTitle14", { fg = "#212a35" })
+hi(0, "NotifyWARNTitle15", { fg = "#212a35" })
 hi(0, "NvimTreeExecFile", { bold = true, fg = "#a6d5a8" })
 hi(0, "NvimTreeFolderIcon", { fg = "#898d92" })
 hi(0, "NvimTreeGitDeleted", { fg = "#f6b2ba" })
@@ -623,12 +680,61 @@ hi(0, "TabLine", { bg = "#0e1724", fg = "#a6aab0" })
 hi(0, "TabLineFill", { link = "TabLine" })
 hi(0, "TabLineSel", { bg = "#0e1724", fg = "#a8c9fb" })
 hi(0, "TargetFileName", { fg = "#c3c7cd" })
-hi(0, "TelescopeBorder", { fg = "#a8c9fb", bg = "#0e1724" })
+hi(0, "TelescopeBorder", { fg = "#a8c9fb" })
 hi(0, "TelescopeMatching", { bold = true })
+hi(0, "TelescopeMultiIcon", { fg = "#d1c98c" })
 hi(0, "TelescopeMultiSelection", { bg = "#4c5767" })
 hi(0, "TelescopeNormal", { link = "NormalFloat" })
+hi(0, "TelescopePreviewBlock", { fg = "#e3b5e3" })
+hi(0, "TelescopePreviewBorder", { fg = "#a8c9fb" })
+hi(0, "TelescopePreviewCharDev", { fg = "#e3b5e3" })
+hi(0, "TelescopePreviewDate", { fg = "#94cff4" })
+hi(0, "TelescopePreviewDirectory", { fg = "#94cff4" })
+hi(0, "TelescopePreviewExecute", { fg = "#a6d5a8" })
+hi(0, "TelescopePreviewGroup", { fg = "#e3b5e3" })
+hi(0, "TelescopePreviewHyphen", { fg = "#4c5767" })
+hi(0, "TelescopePreviewLine", { bg = "#4c5767" })
+hi(0, "TelescopePreviewLink", { fg = "#87d8d3" })
+hi(0, "TelescopePreviewMatch", { bg = "#a8c9fb", fg = "#1a2331" })
+hi(0, "TelescopePreviewMessage", { bg = "#0e1724", fg = "#c3c7cd" })
+hi(0, "TelescopePreviewMessageFillchar", { bg = "#0e1724", fg = "#c3c7cd" })
+hi(0, "TelescopePreviewNormal", { bg = "#0e1724", fg = "#c3c7cd" })
+hi(0, "TelescopePreviewPipe", { fg = "#e3b5e3" })
+hi(0, "TelescopePreviewRead", { fg = "#e3b5e3" })
+hi(0, "TelescopePreviewSize", { fg = "#a6d5a8" })
+hi(0, "TelescopePreviewSocket", { bold = true })
+hi(0, "TelescopePreviewSticky", { bold = true })
+hi(0, "TelescopePreviewTitle", { fg = "#a8c9fb" })
+hi(0, "TelescopePreviewUser", { fg = "#e3b5e3" })
+hi(0, "TelescopePreviewWrite", { bold = true })
+hi(0, "TelescopePromptBorder", { fg = "#a8c9fb" })
+hi(0, "TelescopePromptCounter", { fg = "#4c5767" })
 hi(0, "TelescopePromptNormal", { link = "NormalFloat" })
+hi(0, "TelescopePromptPrefix", { fg = "#d1c98c" })
+hi(0, "TelescopePromptTitle", { fg = "#a8c9fb" })
+hi(0, "TelescopeResultsBorder", { fg = "#a8c9fb" })
+hi(0, "TelescopeResultsClass", { fg = "#94cff4" })
+hi(0, "TelescopeResultsComment", { fg = "#898d92" })
+hi(0, "TelescopeResultsConstant", { fg = "#e3b5e3" })
+hi(0, "TelescopeResultsDiffAdd", { bg = "#002d08" })
+hi(0, "TelescopeResultsDiffChange", { bg = "#3f3700" })
+hi(0, "TelescopeResultsDiffDelete", { bg = "#410d19" })
+hi(0, "TelescopeResultsDiffUntracked", { fg = "#4c5767" })
+hi(0, "TelescopeResultsField", { fg = "#94cff4" })
+hi(0, "TelescopeResultsFunction", { fg = "#94cff4" })
+hi(0, "TelescopeResultsIdentifier", { fg = "#d1c98c" })
+hi(0, "TelescopeResultsLineNr", { fg = "#4c5767" })
+hi(0, "TelescopeResultsMethod", {})
+hi(0, "TelescopeResultsNormal", { bg = "#0e1724", fg = "#c3c7cd" })
+hi(0, "TelescopeResultsNumber", { fg = "#e3b5e3" })
+hi(0, "TelescopeResultsOperator", { fg = "#c3c7cd" })
+hi(0, "TelescopeResultsSpecialComment", { fg = "#87d8d3" })
+hi(0, "TelescopeResultsStruct", {})
+hi(0, "TelescopeResultsTitle", { fg = "#a8c9fb" })
+hi(0, "TelescopeResultsVariable", { fg = "#87d8d3" })
 hi(0, "TelescopeSelection", { bg = "#333c4c" })
+hi(0, "TelescopeSelectionCaret", { bg = "#333c4c" })
+hi(0, "TelescopeTitle", { fg = "#a8c9fb" })
 hi(0, "TermCursorNC", { reverse = true })
 hi(0, "Title", { fg = "#a8c9fb" })
 hi(0, "Todo", { bg = "#1a2331", bold = true, fg = "#a8c9fb" })
@@ -653,6 +759,7 @@ hi(0, "Visual", { bg = "#4c5767" })
 hi(0, "VisualNOS", { bg = "#333c4c" })
 hi(0, "WarningMsg", { fg = "#d1c98c" })
 hi(0, "WhichKey", { fg = "#87d8d3" })
+hi(0, "WhichKeyBorder", { bg = "#0e1724", fg = "#a8c9fb" })
 hi(0, "WhichKeyDesc", { fg = "#c3c7cd" })
 hi(0, "WhichKeyFloat", { bg = "#0e1724", fg = "#c3c7cd" })
 hi(0, "WhichKeyGroup", { fg = "#f6b2ba" })
@@ -663,6 +770,10 @@ hi(0, "WildMenu", { link = "PmenuSel" })
 hi(0, "WinBar", { link = "StatusLine" })
 hi(0, "WinBarNC", { link = "StatusLineNC" })
 hi(0, "WinSeparator", { fg = "#a8c9fb" })
+hi(0, "ZettelDate", { link = "htmlLink" })
+hi(0, "ZettelDateHeader", { link = "htmlLink" })
+hi(0, "ZettelLink", { link = "htmlLink" })
+hi(0, "ZettelLinkHeader", { link = "htmlLink" })
 hi(0, "diffAdded", { link = "DiffAdd" })
 hi(0, "diffRemoved", { link = "DiffFile" })
 hi(0, "gitcommitBranch", { bold = true, fg = "#f0ba94" })
@@ -680,6 +791,14 @@ hi(0, "gitcommitUnmergedFile", { link = "gitcommitDiscardedFile" })
 hi(0, "gitcommitUnmergedType", { link = "gitcommitDiscardedType" })
 hi(0, "gitcommitUntracked", { link = "Comment" })
 hi(0, "gitcommitUntrackedFile", { fg = "#87d8d3" })
+hi(0, "htmlBold", { bold = true })
+hi(0, "htmlBoldItalic", { bold = true, italic = true })
+hi(0, "htmlBoldUnderline", { bold = true, underline = true })
+hi(0, "htmlBoldUnderlineItalic", { bold = true, italic = true, underline = true })
+hi(0, "htmlItalic", { italic = true })
+hi(0, "htmlStrike", { strikethrough = true })
+hi(0, "htmlUnderline", { underline = true })
+hi(0, "htmlUnderlineItalic", { italic = true, underline = true })
 hi(0, "lCursor", { bg = "#c3c7cd", fg = "#1a2331" })
 hi(0, "lualine_a_command", { bg = "#e5dd9a", bold = true, fg = "#1c2635" })
 hi(0, "lualine_a_inactive", { bg = "#d6dae1", bold = true, fg = "#1c2635" })
@@ -758,6 +877,27 @@ hi(0, "lualine_x_fancy_macro_normal", { bg = "#1c2635", fg = "#ff0000" })
 hi(0, "lualine_x_fancy_macro_replace", { bg = "#1c2635", fg = "#ff0000" })
 hi(0, "lualine_x_fancy_macro_terminal", { bg = "#1c2635", fg = "#ff0000" })
 hi(0, "lualine_x_fancy_macro_visual", { bg = "#1c2635", fg = "#ff0000" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_command", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_inactive", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_insert", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_normal", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_replace", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_terminal", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconDefault_visual", { bg = "#1c2635", fg = "#6d8086" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_command", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_inactive", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_insert", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_normal", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_replace", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_terminal", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconLua_visual", { bg = "#1c2635", fg = "#51a0cf" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_command", { bg = "#1c2635", fg = "#ffffff" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_inactive", { bg = "#1c2635", fg = "#ffffff" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_insert", { bg = "#1c2635", fg = "#ffffff" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_normal", { bg = "#1c2635", fg = "#ffffff" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_replace", { bg = "#1c2635", fg = "#ffffff" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_terminal", { bg = "#1c2635", fg = "#ffffff" })
+hi(0, "lualine_y_fancy_filetype_DevIconMd_visual", { bg = "#1c2635", fg = "#ffffff" })
 hi(0, "lualine_y_fancy_filetype_ts_icon_command", { bg = "#1c2635", fg = "#41942c" })
 hi(0, "lualine_y_fancy_filetype_ts_icon_inactive", { bg = "#1c2635", fg = "#41942c" })
 hi(0, "lualine_y_fancy_filetype_ts_icon_insert", { bg = "#1c2635", fg = "#41942c" })
@@ -765,131 +905,6 @@ hi(0, "lualine_y_fancy_filetype_ts_icon_normal", { bg = "#1c2635", fg = "#41942c
 hi(0, "lualine_y_fancy_filetype_ts_icon_replace", { bg = "#1c2635", fg = "#41942c" })
 hi(0, "lualine_y_fancy_filetype_ts_icon_terminal", { bg = "#1c2635", fg = "#41942c" })
 hi(0, "lualine_y_fancy_filetype_ts_icon_visual", { bg = "#1c2635", fg = "#41942c" })
-
--- htmlErrorxxx links to Error
--- htmlSpecialCharxxx links to Special
--- javaScriptExpressionxxx links to javaScript
--- htmlStringxxx links to String
--- htmlValuexxx links to String
--- htmlTagNxxx cleared
--- htmlTagErrorxxx links to htmlError
--- htmlEndTagxxx links to Identifier
--- htmlArgxxx links to Type
--- htmlEventxxx links to javaScript
--- htmlCssDefinitionxxx links to Special
--- htmlTagxxx links to Function
--- htmlTagNamexxx links to htmlStatement
--- htmlSpecialTagNamexxx links to Exception
--- htmlMathTagNamexxx links to htmlTagName
--- htmlSvgTagNamexxx links to htmlTagName
--- htmlMathxxx cleared
--- htmlSvgxxx cleared
--- htmlCommentErrorxxx links to htmlError
--- htmlCommentxxx links to Comment
--- htmlCommentNestedxxx links to htmlError
--- htmlPreStmtxxx links to PreProc
--- htmlPreErrorxxx links to Error
--- htmlPreAttrxxx links to String
--- htmlPreProcxxx links to PreProc
--- htmlPreProcAttrErrorxxx links to Error
--- htmlPreProcAttrNamexxx links to PreProc
--- htmlLinkxxx links to Underlined
--- htmlStrikexxx cterm=strikethrough gui=strikethrough
--- htmlBoldUnderlinexxx cterm=bold,underline gui=bold,underline
--- htmlBoldUnderlineItalicxxx cterm=bold,underline,italic gui=bold,underline,italic
--- htmlBoldItalicUnderlinexxx links to htmlBoldUnderlineItalic
--- htmlUnderlineBoldxxx links to htmlBoldUnderline
--- htmlUnderlineItalicxxx cterm=underline,italic gui=underline,italic
--- htmlUnderlinexxx cterm=underline gui=underline
--- htmlUnderlineBoldItalicxxx links to htmlBoldUnderlineItalic
--- htmlUnderlineItalicBoldxxx links to htmlBoldUnderlineItalic
--- htmlItalicBoldxxx links to htmlBoldItalic
--- htmlItalicUnderlinexxx links to htmlUnderlineItalic
--- htmlItalicxxx cterm=italic gui=italic
--- htmlItalicBoldUnderlinexxx links to htmlBoldUnderlineItalic
--- htmlItalicUnderlineBoldxxx links to htmlBoldUnderlineItalic
--- htmlLeadingSpacexxx links to None
--- htmlH1xxx links to Title
--- htmlH2xxx links to htmlH1
--- htmlH3xxx links to htmlH2
--- htmlH4xxx links to htmlH3
--- htmlH5xxx links to htmlH4
--- htmlH6xxx links to htmlH5
--- htmlTitlexxx links to Title
---
--- markdownValidxxx cleared
--- markdownLineStartxxx cleared
--- markdownH1xxx links to htmlH1
--- markdownH2xxx links to htmlH2
--- markdownH3xxx links to htmlH3
--- markdownH4xxx links to htmlH4
--- markdownH5xxx links to htmlH5
--- markdownH6xxx links to htmlH6
--- markdownBlockquotexxx links to Comment
--- markdownListMarkerxxx links to htmlTagName
--- markdownOrderedListMarkerxxx links to markdownListMarker
--- markdownCodeBlockxxx cleared
--- markdownRulexxx links to PreProc
--- markdownLineBreakxxx cleared
--- markdownLinkTextxxx links to htmlLink
--- markdownItalicxxx links to htmlItalic
--- markdownCodexxx cleared
--- markdownEscapexxx links to Special
--- markdownErrorxxx links to Error
--- markdownHeadingRulexxx links to markdownRule
--- markdownAutomaticLinkxxx links to markdownUrl
--- markdownH1Delimiterxxx links to markdownHeadingDelimiter
--- markdownH2Delimiterxxx links to markdownHeadingDelimiter
--- markdownH3Delimiterxxx links to markdownHeadingDelimiter
--- markdownH4Delimiterxxx links to markdownHeadingDelimiter
--- markdownH5Delimiterxxx links to markdownHeadingDelimiter
--- markdownH6Delimiterxxx links to markdownHeadingDelimiter
--- markdownLinkDelimiterxxx cleared
--- markdownUrlxxx links to Float
--- markdownIdDeclarationxxx links to Typedef
--- markdownUrlTitlexxx links to String
--- markdownUrlDelimiterxxx links to htmlTag
--- markdownUrlTitleDelimiterxxx links to Delimiter
--- markdownLinkTextDelimiterxxx cleared
--- markdownLinkxxx cleared
--- markdownIdxxx links to Type
--- markdownIdDelimiterxxx links to markdownLinkDelimiter
--- markdownItalicDelimiterxxx links to markdownItalic
--- markdownBoldDelimiterxxx links to markdownBold
--- markdownBoldItalicDelimiterxxx links to markdownBoldItalic
--- markdownStrikeDelimiterxxx links to markdownStrike
--- markdownStrikexxx links to htmlStrike
--- markdownCodeDelimiterxxx links to Delimiter
--- markdownFootnotexxx links to Typedef
--- markdownFootnoteDefinitionxxx links to Typedef
---
--- Markdown heading colors
--- hi(0, "htmlBoldItalic", { bold = true, italic = true })
--- hi(0, "htmlBold", { bold = true })
---
--- hi(0, "markdownBoldItalic", { link = "htmlBoldItalic" })
--- hi(0, "markdownBold", { link = "htmlBold" })
---
--- hi(0, "@text.title.1.markdown", { link = "rainbow1" })
--- hi(0, "@text.title.2.markdown", { link = "rainbow2" })
--- hi(0, "@text.title.3.markdown", { link = "rainbow3" })
--- hi(0, "@text.title.4.markdown", { link = "rainbow4" })
--- hi(0, "@text.title.5.markdown", { link = "rainbow5" })
--- hi(0, "@text.title.6.markdown", { link = "rainbow6" })
---
--- hi(0, "markdownH1", { link = "rainbow1" })
--- hi(0, "markdownH2", { link = "rainbow2" })
--- hi(0, "markdownH3", { link = "rainbow3" })
--- hi(0, "markdownH4", { link = "rainbow4" })
--- hi(0, "markdownH5", { link = "rainbow5" })
--- hi(0, "markdownH6", { link = "rainbow6" })
---
--- hi(0, "rainbow1", { fg = "#f6b2ba" })
--- hi(0, "rainbow2", { fg = "#a6d5a8" })
--- hi(0, "rainbow3", { fg = "#d1c98c" })
--- hi(0, "rainbow4", { fg = "#94cff4" })
--- hi(0, "rainbow5", { fg = "#e3b5e3" })
--- hi(0, "rainbow6", { fg = "#87d8d3" })
 
 -- Terminal colors
 local g = vim.g
