@@ -406,7 +406,7 @@ hi(0, "MiniStarterQuery", { bold = true, fg = "#a6d5a8" })
 hi(0, "MiniStarterSection", { fg = "#e3b5e3" })
 hi(0, "MiniStatuslineDevinfo", { bg = "#333c4c", fg = "#a6aab0" })
 hi(0, "MiniStatuslineFileinfo", { link = "MiniStatuslineDevinfo" })
-hi(0, "MiniStatuslineFilename", { bg = "#1a2331", fg = "#a6aab0" })
+hi(0, "MiniStatuslineFilename", { bg = "#0e1724", fg = "#a6aab0" })
 hi(0, "MiniStatuslineInactive", { link = "MiniStatuslineFilename" })
 hi(0, "MiniStatuslineModeCommand", { bg = "#d1c98c", bold = true, fg = "#1a2331" })
 hi(0, "MiniStatuslineModeInsert", { bg = "#94cff4", bold = true, fg = "#1a2331" })
@@ -747,7 +747,7 @@ hi(0, "lualine_b_visual", { bg = "#1c2635", fg = "#94ede8" })
 hi(0, "lualine_c_command", { bg = "#1c2635", fg = "#d6dae1" })
 hi(0, "lualine_c_inactive", { bg = "#1c2635", fg = "#d6dae1" })
 hi(0, "lualine_c_insert", { bg = "#1c2635", fg = "#d6dae1" })
-hi(0, "lualine_c_normal", { bg = "#1c2635", fg = "#d6dae1" })
+hi(0, "lualine_c_normal", { bg = "#0e1724", fg = "#d6dae1" })
 hi(0, "lualine_c_replace", { bg = "#1c2635", fg = "#d6dae1" })
 hi(0, "lualine_c_terminal", { bg = "#1c2635", fg = "#d6dae1" })
 hi(0, "lualine_c_visual", { bg = "#1c2635", fg = "#d6dae1" })
@@ -864,32 +864,32 @@ hi(0, "lualine_y_fancy_filetype_ts_icon_visual", { bg = "#1c2635", fg = "#41942c
 -- markdownFootnoteDefinitionxxx links to Typedef
 --
 -- Markdown heading colors
--- hi(0, "htmlBoldItalic", { bold = true, italic = true })
--- hi(0, "htmlBold", { bold = true })
---
--- hi(0, "markdownBoldItalic", { link = "htmlBoldItalic" })
--- hi(0, "markdownBold", { link = "htmlBold" })
---
--- hi(0, "@text.title.1.markdown", { link = "rainbow1" })
--- hi(0, "@text.title.2.markdown", { link = "rainbow2" })
--- hi(0, "@text.title.3.markdown", { link = "rainbow3" })
--- hi(0, "@text.title.4.markdown", { link = "rainbow4" })
--- hi(0, "@text.title.5.markdown", { link = "rainbow5" })
--- hi(0, "@text.title.6.markdown", { link = "rainbow6" })
---
--- hi(0, "markdownH1", { link = "rainbow1" })
--- hi(0, "markdownH2", { link = "rainbow2" })
--- hi(0, "markdownH3", { link = "rainbow3" })
--- hi(0, "markdownH4", { link = "rainbow4" })
--- hi(0, "markdownH5", { link = "rainbow5" })
--- hi(0, "markdownH6", { link = "rainbow6" })
---
--- hi(0, "rainbow1", { fg = "#f6b2ba" })
--- hi(0, "rainbow2", { fg = "#a6d5a8" })
--- hi(0, "rainbow3", { fg = "#d1c98c" })
--- hi(0, "rainbow4", { fg = "#94cff4" })
--- hi(0, "rainbow5", { fg = "#e3b5e3" })
--- hi(0, "rainbow6", { fg = "#87d8d3" })
+hi(0, "htmlBoldItalic", { bold = true, italic = true })
+hi(0, "htmlBold", { bold = true })
+
+hi(0, "markdownBoldItalic", { link = "htmlBoldItalic" })
+hi(0, "markdownBold", { link = "htmlBold" })
+
+hi(0, "@text.title.1.markdown", { link = "rainbow1" })
+hi(0, "@text.title.2.markdown", { link = "rainbow2" })
+hi(0, "@text.title.3.markdown", { link = "rainbow3" })
+hi(0, "@text.title.4.markdown", { link = "rainbow4" })
+hi(0, "@text.title.5.markdown", { link = "rainbow5" })
+hi(0, "@text.title.6.markdown", { link = "rainbow6" })
+
+hi(0, "markdownH1", { link = "rainbow1" })
+hi(0, "markdownH2", { link = "rainbow2" })
+hi(0, "markdownH3", { link = "rainbow3" })
+hi(0, "markdownH4", { link = "rainbow4" })
+hi(0, "markdownH5", { link = "rainbow5" })
+hi(0, "markdownH6", { link = "rainbow6" })
+
+hi(0, "rainbow1", { fg = "#f6b2ba" })
+hi(0, "rainbow2", { fg = "#a6d5a8" })
+hi(0, "rainbow3", { fg = "#d1c98c" })
+hi(0, "rainbow4", { fg = "#94cff4" })
+hi(0, "rainbow5", { fg = "#e3b5e3" })
+hi(0, "rainbow6", { fg = "#87d8d3" })
 
 -- Terminal colors
 local g = vim.g

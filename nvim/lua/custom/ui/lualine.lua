@@ -1,51 +1,52 @@
 return {
-{
-    "nvim-lualine/lualine.nvim",
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
-        "meuter/lualine-so-fancy.nvim",
-    },
-    opts = {
-        options = {
-
-            theme = "auto",
-                component_separators = { left = "|", right = "|"},
-                section_separators = { left = "", right = ""  },
-                globalstatus = true,
-                refresh = {
-                    statusline = 100,
-                },
-                disabled_filetypes = {
-                    statusline = { "alpha" },
-                    winbar = { "alpha" },
-                }
-            },
-            sections = {
-                lualine_a = {
-                    { "mode" },
-                },
-                lualine_b = {
-                    { "branch" },
-                    { "fancy_diff" },
-                    { "filename",
-                        filetype_names = { alpha = "Dashboard" },
-                    },
-                    { "fancy_diagnostics" },
-                },
-                lualine_c = {
-                },
-                lualine_x = {
-                    { "fancy_macro" },
-                },
-                lualine_y = {
-                    { "progress" },
-                    { "fancy_filetype", ts_icon = "" },
-                },
-                lualine_z = {
-                    { "fancy_lsp_servers" }
-                },
-            },
-        },
-    },
+-- {
+--     "nvim-lualine/lualine.nvim",
+--     event = { 'BufReadPre', 'BufNewFile' },
+--     dependencies = {
+--         "nvim-tree/nvim-web-devicons",
+--         "meuter/lualine-so-fancy.nvim",
+--     },
+--     opts = {
+--         options = {
+--
+--             theme = "auto",
+--                 component_separators = { left = "|", right = "|"},
+--                 section_separators = { left = "", right = ""  },
+--                 globalstatus = true,
+--                 refresh = {
+--                     statusline = 100,
+--                 },
+--                 disabled_filetypes = {
+--                     statusline = { "alpha" },
+--                     winbar = { "alpha" },
+--                 }
+--             },
+--             sections = {
+--                 lualine_a = {
+--                     { "mode" },
+--                 },
+--                 lualine_b = {
+--                     { "branch" },
+--                     { "fancy_diff" },
+--                     { "filename",
+--                         filetype_names = { alpha = "Dashboard" },
+--                     },
+--                     { "fancy_diagnostics" },
+--                 },
+--                 lualine_c = {
+--                     color = { bg = "#0e1724", fg = "#d6dae1" },
+--                 },
+--                 lualine_x = {
+--                     { "fancy_macro" },
+--                 },
+--                 lualine_y = {
+--                     { "progress" },
+--                     { "fancy_filetype", ts_icon = "" },
+--                 },
+--                 lualine_z = {
+--                     { "fancy_lsp_servers" }
+--                 },
+--             },
+--         },
+--     },
 }
