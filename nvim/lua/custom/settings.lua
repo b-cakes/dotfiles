@@ -15,8 +15,10 @@ vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz0')
+vim.keymap.set('n', '<C-u>', '<C-u>zz0')
+
+vim.o.spell = true
 
 vim.opt.guicursor = 'i:block,i-r:blinkwait200-blinkon150-blinkoff100,'
 
