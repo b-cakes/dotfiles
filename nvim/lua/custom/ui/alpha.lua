@@ -14,7 +14,7 @@ function M.config()
 
 	-- function to create multiple colors for the header
 	local function apply_gradient_hl(text)
-		local gradient = require("custom.utils").create_gradient("#c0979d", "#3e8fb0", #text)
+		local gradient = require("custom.utils").create_gradient(vim.g.terminal_color_6, vim.g.terminal_color_5, #text)
 
 		local lines = {}
 		for i, line in ipairs(text) do

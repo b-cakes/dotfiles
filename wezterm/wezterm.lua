@@ -7,30 +7,44 @@ if wezterm.config_builder then
 end
 
 
-
-config.color_scheme = 'Catppuccin Macchiato'
 config.enable_tab_bar = false
 config.font = wezterm.font 'Fira Code'
 config.underline_position = -2
 config.enable_kitty_graphics = true
 config.cursor_blink_rate = 390
 
--- This is from my "tokyo-ish" colorscheme in nvim/colors/tokyo-ish.lua file.
-	-- g.terminal_color_0 = "#1a2331"
-	-- g.terminal_color_1 = "#f6b2ba"
-	-- g.terminal_color_2 = "#a6d5a8"
-	-- g.terminal_color_3 = "#d1c98c"
-	-- g.terminal_color_4 = "#94cff4"
-	-- g.terminal_color_5 = "#e3b5e3"
-	-- g.terminal_color_6 = "#87d8d3"
-	-- g.terminal_color_7 = "#c3c7cd"
-	-- g.terminal_color_8 = "#1a2331"
-	-- g.terminal_color_9 = "#f6b2ba"
-	-- g.terminal_color_10 = "#a6d5a8"
-	-- g.terminal_color_11 = "#d1c98c"
-	-- g.terminal_color_12 = "#94cff4"
-	-- g.terminal_color_13 = "#e3b5e3"
-	-- g.terminal_color_14 = "#87d8d3"
-	-- g.terminal_color_15 = "#c3c7cd"
+-- Use 'ColorschemeDump wezterm' command to paste the current neovim colorscheme into the below format. 
+
+config.colors = {
+	foreground = "#c3c7cd",
+	background = "#1a2331",
+	selection_bg = "#c3c7cd",
+	selection_fg = "#1a2331",
+	cursor_fg = "#1a2331",
+	cursor_bg = "#c3c7cd",
+	ansi = {
+		"#1a2331",
+		"#f6b2ba",
+		"#a6d5a8",
+		"#d1c98c",
+		"#94cff4",
+		"#e3b5e3",
+		"#87d8d3",
+		"#c3c7cd",
+	},
+	brights = {
+		"#1a2331",
+		"#f6b2ba",
+		"#a6d5a8",
+		"#d1c98c",
+		"#94cff4",
+		"#e3b5e3",
+		"#87d8d3",
+		"#c3c7cd",
+	}
+}
+
+
+
 
 return config

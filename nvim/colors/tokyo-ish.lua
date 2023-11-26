@@ -877,7 +877,7 @@ hi(0, "@text.title.4.markdown", { link = "rainbow4" })
 hi(0, "@text.title.5.markdown", { link = "rainbow5" })
 hi(0, "@text.title.6.markdown", { link = "rainbow6" })
 
-hi(0, "markdownH1", { link = "rainbow1" })
+hi(0, "markdownH1", { fg = "#f6b2ba", bg = "#4c5767", bold = true })
 hi(0, "markdownH2", { link = "rainbow2" })
 hi(0, "markdownH3", { link = "rainbow3" })
 hi(0, "markdownH4", { link = "rainbow4" })
