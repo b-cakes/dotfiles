@@ -2,6 +2,9 @@
 
 These are my dotfiles on macOS.
 
+![terminal screenshot](~/.dotfiles/screenshots/terminal_screenshot.jpeg) 
+
+
 ## Programs:
 
 - neovim
