@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end
 })
 
+-- creating dark background windows for Telescope when using the randomhue cmd from mini.hues
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "randomhue",
 	command = "hi link TelescopeNormal NormalFloat | hi link TelescopePromptNormal NormalFloat",
