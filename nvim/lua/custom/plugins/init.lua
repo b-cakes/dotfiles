@@ -15,4 +15,7 @@ return {
 
 
   { 'goolord/nvim-colorscheme-convert' },
+
+  { "MunifTanjim/nougat.nvim", },
+
 }

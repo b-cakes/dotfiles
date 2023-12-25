@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- If using mini.colors colorscheme, use the vim.cmd.colorscheme command in this file.
-vim.cmd.colorscheme('tokyo-ish')
+vim.cmd.colorscheme('tokyo-cat')
 
 -- Set highlight on search
 vim.o.hlsearch = false

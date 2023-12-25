@@ -4,7 +4,7 @@ return {
         dependencies = "nvim-treesitter/nvim-treesitter",
         opts = {
             markdown = {
-                headline_highlights = false,
+                headline_highlights = { "Headline1" },
                 codeblock_highlight = "CodeBlock",
                 dash_highlight = "Dash",
                 dash_string = "-",

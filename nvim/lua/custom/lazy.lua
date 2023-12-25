@@ -19,5 +19,5 @@ vim.opt.rtp:prepend(lazypath)
 -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 require('lazy').setup({
 	{ import = 'custom.plugins' },
-	{ import = 'custom.ui' },
+	-- { import = 'custom.ui' },
 })
