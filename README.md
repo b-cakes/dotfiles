@@ -2,7 +2,7 @@
 
 These are my dotfiles on macOS.
 
-![terminal screenshot](~/.dotfiles/screenshots/terminal_screenshot.jpeg) 
+![terminal_screenshot](https://github.com/b-cakes/dotfiles/assets/115378509/1c3fbb64-aab8-413a-9d58-05c52c1b3fff)
 
 
 ## Programs:
