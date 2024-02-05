@@ -11,7 +11,7 @@ config.enable_tab_bar = false
 config.font = wezterm.font_with_fallback {
   {
     family = 'Monaspace Neon',
-    harfbuzz_features = {'ss01', 'ss02', 'ss03', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'},
+    harfbuzz_features = {'ss01', 'ss02', 'ss03', 'ss05', 'ss06', 'ss07', 'ss08', 'calt'},
   },
 }
 config.underline_position = -2

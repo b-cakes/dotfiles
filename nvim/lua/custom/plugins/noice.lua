@@ -23,7 +23,7 @@ return {
                 },
             },
             health = {
-                checker = false,
+                checker = true,
             },
             -- you can enable a preset for easier configuration
             presets = {

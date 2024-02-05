@@ -7,7 +7,7 @@ return {
                 headline_highlights = { "Headline1" },
                 codeblock_highlight = "CodeBlock",
                 dash_highlight = "Dash",
-                dash_string = "-",
+                dash_string = "_",
                 quote_highlight = "Quote",
                 quote_string = "┃",
                 fat_headlines = false,

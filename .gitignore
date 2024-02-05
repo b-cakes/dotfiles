@@ -1,2 +1,6 @@
 .DS_Store
 **/.DS_Store
+/nvim/spell
+/iterm2
+/ranger
+/zellij
