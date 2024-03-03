@@ -1,21 +1,21 @@
 return {
+
+  -- Telescope loading
+  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope-fzf-native.nvim' },
+
   -- These are all plugins with no configuration.
 
-  -- -- Git related plugins
+  -- Git related plugins
   -- { 'tpope/vim-fugitive' },
   -- { 'tpope/vim-rhubarb' },
   { 'tpope/vim-sleuth' },
 
   { 'folke/neodev.nvim' },
 
-  -- Telescope loading
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
-  { 'nvim-telescope/telescope-fzf-native.nvim' },
-  { 'nvim-telescope/telescope-file-browser.nvim' },
-
-
+  -- for pasting nvim colorscheme palette into wezterm
   { 'goolord/nvim-colorscheme-convert' },
 
-  { "MunifTanjim/nougat.nvim", },
-
+  -- status line plugin 
+  -- { "MunifTanjim/nougat.nvim" },
 }

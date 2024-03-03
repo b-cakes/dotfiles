@@ -25,3 +25,7 @@ vim.opt.guicursor = 'i:block,i-r:blinkwait200-blinkon150-blinkoff100,'
 vim.opt.relativenumber = true
 
 vim.opt.scrolloff = 8
+
+vim.o.laststatus = 3
+
+vim.o.cmdheight = 0

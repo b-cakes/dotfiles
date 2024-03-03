@@ -1,3 +1,0 @@
-return {
-	"daschw/leaf.nvim",
-}
