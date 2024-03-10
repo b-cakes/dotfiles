@@ -7,30 +7,37 @@ return {
   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
   dependencies = {
 
-    "nvim-lua/plenary.nvim", -- required
-    "hrsh7th/nvim-cmp", -- optional
-    "nvim-telescope/telescope.nvim",-- optional
+    "nvim-lua/plenary.nvim",         -- required
+    "hrsh7th/nvim-cmp",              -- optional
+    "nvim-telescope/telescope.nvim", -- optional
   },
 
   opts = {
-    dir = "~/journal",  -- no need to call 'vim.fn.expand' here
+
+    workspaces = {
+      {
+        name = "journal",
+        path = "~/journal"
+      },
+
+      {
+        name = "work",
+        path = "~/obsidian/work"
+      },
+    },
+
+    notes_subdir = "Notes",
+
     daily_notes = { folder = "Daily" },
+
     completion = {
       -- If using nvim-cmp, otherwise set to false
       nvim_cmp = true,
       -- Trigger completion at 2 chars
       min_chars = 2,
-      -- Where to put new notes created from completion. Valid options are
-      --  * "current_dir" - put new notes in same directory as the current buffer.
-      --  * "notes_subdir" - put new notes in the default notes subdirectory.
-      new_notes_location = "Notes",
-
-      -- Whether to add the output of the node_id_func to new notes in autocompletion.
-      -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
-      prepend_note_id = true
     },
 
-    -- Optional, configure key mappings. These are the defaults.     
+    -- Optional, configure key mappings. These are the defaults.
     -- If you don't want to set any keymappings this way then set 'mappings = {}'.
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
@@ -50,15 +57,6 @@ return {
       },
     },
 
-    -- Sets Telescope to the picker for ObsidianSearch and ObsidianQuickSwitch commands.
-    finder = "telescope.nvim",
-
-    -- Optional, sort search results by "path", "modified", "accessed", or "created".
-    -- The recommend value is "modified" and `true` for `sort_reversed`, which means, for example,
-    -- that `:ObsidianQuickSwitch` will show the notes sorted by latest modified time
-    sort_by = "modified",
-    sort_reversed = true,
-
     -- Optional, alternatively you can customize the frontmatter data.
     note_frontmatter_func = function(note)
       -- This is equivalent to the default frontmatter function.
@@ -72,5 +70,32 @@ return {
       end
       return out
     end,
+
+    follow_url_func = function(url)
+      -- Open the URL in the default web browser.
+      vim.fn.jobstart({ "open", url }) -- Mac OS
+      -- vim.fn.jobstart({"xdg-open", url})  -- linux
+    end,
+
+    -- Sets Telescope to the picker for ObsidianSearch and ObsidianQuickSwitch commands.
+    picker = {
+      name = "telescope.nvim",
+    },
+
+    -- Optional, sort search results by "path", "modified", "accessed", or "created".
+    -- The recommend value is "modified" and `true` for `sort_reversed`, which means, for example,
+    -- that `:ObsidianQuickSwitch` will show the notes sorted by latest modified time
+    sort_by = "modified",
+    sort_reversed = true,
+
+    ui = {
+      checkboxes = {
+        ["<"] = { char = "󰃵" },
+        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "", hl_group = "ObsidianDone" },
+        [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+        ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },      }
+    }
+
   },
 }

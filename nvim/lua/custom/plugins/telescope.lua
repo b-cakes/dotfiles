@@ -88,4 +88,5 @@ return {
   vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' }),
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' }),
   vim.keymap.set('n', '<leader>th', require('telescope.builtin').highlights, { desc = '[T]elescope [H]ighlights' }),
+  vim.keymap.set('n', '<leader>tb', ':Telescope<CR>' , { desc = '[T]elescope [B]uiltins' }),
 }
