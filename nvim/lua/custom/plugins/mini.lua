@@ -10,37 +10,37 @@ return {
         end
     },
 
-    {
-        'echasnovski/mini.statusline',
-        version = false,
-        config = function ()
-            require("mini.statusline").setup({
-                content = {
-                    active = function ()
-                            local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
-                            local git = MiniStatusline.section_git({ trunc_width = 75 })
-                            local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
-                            local filename = MiniStatusline.section_filename({ trunc_width = 140 })
-                            local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
-                            -- local location = MiniStatusline.section_location({ trunc_width = 75 })
-                            local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
-
-                            return MiniStatusline.combine_groups({
-                                { hl = mode_hl, strings = { mode } },
-                                { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
-                                '%<', -- Mark general truncate point
-                                { hl = 'MiniStatuslineFilename', strings = { filename } },
-                                '%=', -- End left alignment
-                                { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
-                                { hl = mode_hl, strings = { search } },
-                            })
-                    end
-                },
-
-                set_vim_settings = false,
-            })
-        end
-    },
+    -- {
+    --     'echasnovski/mini.statusline',
+    --     version = false,
+    --     config = function ()
+    --         require("mini.statusline").setup({
+    --             content = {
+    --                 active = function ()
+    --                         local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
+    --                         local git = MiniStatusline.section_git({ trunc_width = 75 })
+    --                         local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
+    --                         local filename = MiniStatusline.section_filename({ trunc_width = 140 })
+    --                         local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
+    --                         -- local location = MiniStatusline.section_location({ trunc_width = 75 })
+    --                         local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
+    --
+    --                         return MiniStatusline.combine_groups({
+    --                             { hl = mode_hl, strings = { mode } },
+    --                             { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
+    --                             '%<', -- Mark general truncate point
+    --                             { hl = 'MiniStatuslineFilename', strings = { filename } },
+    --                             '%=', -- End left alignment
+    --                             { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
+    --                             { hl = mode_hl, strings = { search } },
+    --                         })
+    --                 end
+    --             },
+    --
+    --             set_vim_settings = false,
+    --         })
+    --     end
+    -- },
 
     {
         'echasnovski/mini.pairs',
@@ -127,24 +127,32 @@ return {
         -- end
     },
 
+    -- {
+    --     'echasnovski/mini.notify',
+    --     version = false,
+    --     config = function ()
+    --         require("mini.notify").setup()
+    --         -- Defaults
+    --         vim.notify = require('mini.notify').make_notify()
+    --
+    --         -- Change duration for errors to show them longer
+    --         local opts = {
+    --             ERROR = { duration = 5000, hl_group = 'DiagnosticError'  },
+    --             WARN  = { duration = 5000, hl_group = 'DiagnosticWarn'   },
+    --             INFO  = { duration = 5000, hl_group = 'DiagnosticInfo'   },
+    --             DEBUG = { duration = 0,    hl_group = 'DiagnosticHint'   },
+    --             TRACE = { duration = 0,    hl_group = 'DiagnosticOk'     },
+    --             OFF   = { duration = 0,    hl_group = 'MiniNotifyNormal' },
+    --         }
+    --         vim.notify = require('mini.notify').make_notify(opts)
+    --     end
+    -- }
+    
     {
-        'echasnovski/mini.notify',
+        'echasnovski/mini.animate',
         version = false,
         config = function ()
-            require("mini.notify").setup()
-            -- Defaults
-            vim.notify = require('mini.notify').make_notify()
-
-            -- Change duration for errors to show them longer
-            local opts = {
-                ERROR = { duration = 5000, hl_group = 'DiagnosticError'  },
-                WARN  = { duration = 5000, hl_group = 'DiagnosticWarn'   },
-                INFO  = { duration = 5000, hl_group = 'DiagnosticInfo'   },
-                DEBUG = { duration = 0,    hl_group = 'DiagnosticHint'   },
-                TRACE = { duration = 0,    hl_group = 'DiagnosticOk'     },
-                OFF   = { duration = 0,    hl_group = 'MiniNotifyNormal' },
-            }
-            vim.notify = require('mini.notify').make_notify(opts)
+            require("mini.animate").setup()
         end
     }
 }

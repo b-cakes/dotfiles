@@ -15,7 +15,4 @@ return {
 
   -- for pasting nvim colorscheme palette into wezterm
   { 'goolord/nvim-colorscheme-convert' },
-
-  -- status line plugin 
-  -- { "MunifTanjim/nougat.nvim" },
 }

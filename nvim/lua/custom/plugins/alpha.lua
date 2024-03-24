@@ -99,7 +99,7 @@ function M.config()
 
 	theme.config.layout = {
 		{ type = "padding", val = 10 },
-		get_header({ headers.ragnarok, headers.shrek }),
+		get_header({ headers.ragnarok, headers.shrek, headers.nvchad }),
 		{ type = "padding", val = 5 },
 		links,
 		-- { type = "padding", val = 1 },

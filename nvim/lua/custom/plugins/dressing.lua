@@ -5,6 +5,9 @@ return {
     opts = {
       select = {
         backend = { "builtin" },
+        builtin = {
+          relative = "cursor",
+        },
       },
     },
   },
