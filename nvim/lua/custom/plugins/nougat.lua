@@ -34,27 +34,27 @@ function Plugin.config()
   local stl = Bar("statusline")
   stl:add_item(mode)
   stl:add_item(nut.git.branch({
-    hl = { bg = color.bg2, fg = color.magenta },
+    hl = { bg = color.bg2 },
     prefix = "  ",
-    suffix = " ",
+    -- suffix = " ",
     sep_right = sep.space(true),
   }))
   stl:add_item(nut.git.status.create({
-    hl = { fg = color.bg },
+    hl = { bg = color.bg1 },
     content = {
       nut.git.status.count("added", {
-        hl = { bg = color.green },
-        prefix = "+",
+        hl = { fg = color.green },
+        prefix = " +",
         sep_right = sep.space(true),
       }),
       nut.git.status.count("changed", {
-        hl = { bg = color.blue },
-        prefix = "~",
+        hl = { fg = color.blue },
+        prefix = " ~",
         sep_right = sep.space(true),
       }),
       nut.git.status.count("removed", {
-        hl = { bg = color.red },
-        prefix = "-",
+        hl = { fg = color.red },
+        prefix = " -",
         sep_right = sep.space(true),
       }),
     },
