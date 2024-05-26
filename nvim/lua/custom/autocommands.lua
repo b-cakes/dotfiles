@@ -32,3 +32,12 @@ vim.api.nvim_create_autocmd("WinLeave", {
 vim.api.nvim_create_autocmd("WinEnter", {
 	command = "set cursorline"
 })
+
+vim.api.nvim_create_augroup('TelescopeCursorLine', { clear = true })
+vim.api.nvim_create_autocmd('User', {
+  group = 'TelescopeCursorLine',
+  pattern = 'TelescopePreviewerLoaded',
+  callback = function()
+    vim.opt_local.cursorline = false
+  end,
+})

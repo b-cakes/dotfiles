@@ -12,6 +12,7 @@ function Plugin.config()
   local nut = {
     buf = {
       diagnostic_count = require("nougat.nut.buf.diagnostic_count").create,
+      filename = require("nougat.nut.buf.filename").create,
       filetype = require("nougat.nut.buf.filetype").create,
     },
     git = {
@@ -36,8 +37,7 @@ function Plugin.config()
   stl:add_item(nut.git.branch({
     hl = { bg = color.bg2 },
     prefix = "  ",
-    -- suffix = " ",
-    sep_right = sep.space(true),
+    suffix = " ",
   }))
   stl:add_item(nut.git.status.create({
     hl = { bg = color.bg1 },
@@ -58,6 +58,11 @@ function Plugin.config()
         sep_right = sep.space(true),
       }),
     },
+  }))
+  stl:add_item(nut.buf.filename({
+    sep_left = sep.space(true),
+    prefix = " ",
+    suffix = " ",
   }))
   stl:add_item(nut.spacer())
   stl:add_item(nut.truncation_point())

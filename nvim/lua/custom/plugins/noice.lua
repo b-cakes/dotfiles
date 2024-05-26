@@ -6,21 +6,21 @@ return {
             { 'MunifTanjim/nui.nvim' },
         },
         opts = {
-            views = {
-                cmdline_popup = {
-                    position = {
-                        row = "0%",
-                        col = "100%",
-                    },
-                    border = {
-                        style = "single",
-                    },
-                    filter_options = {},
-                    win_options = {
-                        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-                    },
-                },
-            },
+            -- views = {
+            --     cmdline_popup = {
+            --         position = {
+            --             row = "0%",
+            --             col = "100%",
+            --         },
+            --         border = {
+            --             style = "single",
+            --         },
+            --         filter_options = {},
+            --         win_options = {
+            --             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+            --         },
+            --     },
+            -- },
 
             lsp = {
                 override = {
@@ -40,6 +40,7 @@ return {
             },
             -- you can enable a preset for easier configuration
             presets = {
+		command_palette = true,
                 lsp_doc_border = false, -- add a border to hover docs and signature help
             },
         },
