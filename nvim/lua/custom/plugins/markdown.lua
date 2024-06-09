@@ -39,7 +39,7 @@ return {
 	    -- Characters that will replace the # at the start of headings
 	    headings = { '', '', '', '', '', '' },
 	    -- Character to use for the horizontal break
-	    dash = '_',
+	    dash = '-',
 		--    -- Character to use for the bullet points in lists
 		--    bullets = { '●', '○', '◆', '◇' },
 		--    checkbox = {

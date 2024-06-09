@@ -92,7 +92,7 @@ function M.config()
 		val = {
 			dashboard.button("SPC m f", "  File Manager"),
 			dashboard.button("l", "鈴 Lazy", "<cmd>Lazy<CR>"),
-			dashboard.button("t", "  Telescope", "<cmd>Telescope<CR>"),
+			dashboard.button("f", "  FzfLua", "<cmd>FzfLua<CR>"),
 		},
 		position = "center",
 	}

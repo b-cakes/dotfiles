@@ -12,6 +12,7 @@ return {
   { 'tpope/vim-sleuth' },
 
   { 'folke/neodev.nvim' },
+  { 'folke/zen-mode.nvim' },
 
   -- for pasting nvim colorscheme palette into wezterm
   { 'goolord/nvim-colorscheme-convert' },
