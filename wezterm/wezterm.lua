@@ -34,9 +34,9 @@ config.colors = {
     "#f6b2ba",
     "#a6d5a8",
     "#d1c98c",
-    "#87d8d3",
     "#94cff4",
     "#e3b5e3",
+    "#87d8d3",
     "#c3c7cd",
   },
   brights = {
@@ -44,9 +44,9 @@ config.colors = {
     "#f6b2ba",
     "#a6d5a8",
     "#d1c98c",
-    "#87d8d3",
     "#94cff4",
     "#e3b5e3",
+    "#87d8d3",
     "#c3c7cd",
   }
 }

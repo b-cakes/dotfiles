@@ -1,8 +1,8 @@
 return {
 
-  -- Telescope loading
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
-  { 'nvim-telescope/telescope-fzf-native.nvim' },
+  -- -- Telescope loading
+  -- { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+  -- { 'nvim-telescope/telescope-fzf-native.nvim' },
 
   -- These are all plugins with no configuration.
 

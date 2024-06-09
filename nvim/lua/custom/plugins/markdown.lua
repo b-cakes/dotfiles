@@ -14,15 +14,6 @@ return {
 
 		(fenced_code_block) @code
 
-		[
-		    (list_marker_plus)
-		    (list_marker_minus)
-		    (list_marker_star)
-		] @list_marker
-
-		(task_list_marker_unchecked) @checkbox_unchecked
-		(task_list_marker_checked) @checkbox_checked
-
 		(block_quote (block_quote_marker) @quote_marker)
 		(block_quote (paragraph (inline (block_continuation) @quote_marker)))
 
@@ -43,20 +34,20 @@ return {
 	    -- Filetypes this plugin will run on
 	    file_types = { 'markdown' },
 	    -- Vim modes that will show a rendered view of the markdown file
-	    -- All other modes will be uneffected by this plugin
+	    -- All other modes will be unaffected by this plugin
 	    render_modes = { 'n', 'c' },
 	    -- Characters that will replace the # at the start of headings
 	    headings = { '', '', '', '', '', '' },
 	    -- Character to use for the horizontal break
-	    dash = '—',
-	    -- Character to use for the bullet points in lists
-	    bullets = { '●', '○', '◆', '◇' },
-	    checkbox = {
-		-- Character that will replace the [ ] in unchecked checkboxes
-		unchecked = '󰄱 ',
-		-- Character that will replace the [x] in checked checkboxes
-		checked = ' ',
-	    },
+	    dash = '_',
+		--    -- Character to use for the bullet points in lists
+		--    bullets = { '●', '○', '◆', '◇' },
+		--    checkbox = {
+		-- -- Character that will replace the [ ] in unchecked checkboxes
+		-- unchecked = '󰄱 ',
+		-- -- Character that will replace the [x] in checked checkboxes
+		-- checked = ' ',
+		--    },
 	    -- Character that will replace the > at the start of block quotes
 	    quote = '┃',
 	    -- Symbol / text to use for different callouts
@@ -67,12 +58,22 @@ return {
 		warning = '  Warning',
 		caution = '󰳦  Caution',
 	    },
-	    -- See :h 'conceallevel' for more information about meaning of values
-	    conceal = {
-		-- conceallevel used for buffer when not being rendered, get user setting
-		default = vim.opt.conceallevel:get(),
-		-- conceallevel used for buffer when being rendered
-		rendered = 3,
+	    -- See :h 'conceallevel' for more information about meaning of value
+	    win_options = {
+		-- See :h 'conceallevel'
+		conceallevel = {
+		    -- Used when not being rendered, get user setting
+		    default = vim.api.nvim_get_option_value('conceallevel', {}),
+		    -- Used when being rendered, concealed text is completely hidden
+		    rendered = 2,
+		},
+		-- See :h 'concealcursor'
+		concealcursor = {
+		    -- Used when not being rendered, get user setting
+		    default = vim.api.nvim_get_option_value('concealcursor', {}),
+		    -- Used when being rendered, conceal text in all modes
+		    rendered = 'nvic',
+		},
 	    },
 	    -- Add a line above and below tables to complete look, ends up like a window
 	    fat_tables = true,

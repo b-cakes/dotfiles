@@ -79,7 +79,7 @@ return {
 
     -- Sets Telescope to the picker for ObsidianSearch and ObsidianQuickSwitch commands.
     picker = {
-      name = "telescope.nvim",
+      name = "fzf-lua",
     },
 
     -- Optional, sort search results by "path", "modified", "accessed", or "created".
@@ -89,6 +89,7 @@ return {
     sort_reversed = true,
 
     ui = {
+      enable = true,
       checkboxes = {
         ["<"] = { char = "󰃵" },
         [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
