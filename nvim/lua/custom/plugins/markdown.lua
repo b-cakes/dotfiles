@@ -9,6 +9,9 @@ return {
 	    start_enabled = true,
 	    -- Capture groups that get pulled from markdown
 	    markdown_query = [[
+		(atx_heading [
+		    (atx_h1_marker)
+		] @heading)
 
 		(thematic_break) @dash
 
@@ -37,7 +40,7 @@ return {
 	    -- All other modes will be unaffected by this plugin
 	    render_modes = { 'n', 'c' },
 	    -- Characters that will replace the # at the start of headings
-	    headings = { '', '', '', '', '', '' },
+	    headings = { '󰲡 ', '', '', '', '', '' },
 	    -- Character to use for the horizontal break
 	    dash = '-',
 		--    -- Character to use for the bullet points in lists
@@ -79,19 +82,19 @@ return {
 	    fat_tables = true,
 	    -- Define the highlight groups to use when rendering various components
 	    highlights = {
-		-- heading = {
-		--     -- Background of heading line
-		--     backgrounds = { 'DiffAdd', 'DiffChange', 'DiffDelete' },
-		--     -- Foreground of heading character only
-		--     foregrounds = {
-		-- 	'markdownH1',
-		-- 	'markdownH2',
-		-- 	'markdownH3',
-		-- 	'markdownH4',
-		-- 	'markdownH5',
-		-- 	'markdownH6',
-		--     },
-		-- },
+		heading = {
+		     -- Background of heading line
+		    backgrounds = { 'NoiceVirtualText' },
+		     -- Foreground of heading character only
+		    foregrounds = {
+			'markdownH1',
+			-- 	'markdownH2',
+			-- 	'markdownH3',
+			-- 	'markdownH4',
+			-- 	'markdownH5',
+			-- 	'markdownH6',
+		    },
+		},
 		-- Horizontal break
 		dash = 'LineNr',
 		-- Code blocks

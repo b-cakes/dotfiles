@@ -1,3 +1,6 @@
+-- Delete mini.basics save keymap.
+vim.keymap.del('n', '<C-s>')
+
 -- run python file
 vim.api.nvim_set_keymap('n', '<leader>rf', ':!python3 %<CR>', {desc = '[R]un [F]ile'})
 
