@@ -28,6 +28,7 @@ vim.api.nvim_set_keymap('n', '<leader>od', ':cd /Users/johnharpt/journal<CR>', {
 
 -- Dismiss notifications.
 vim.api.nvim_set_keymap('n', '<leader>nd', ':NoiceDismiss<CR>', {desc = 'NoiceDismiss'})
+vim.api.nvim_set_keymap('n', '<leader>nf', ':NoiceFzf<CR>', {desc = 'NoiceFzf'})
 
 vim.api.nvim_set_keymap('n', '<leader>ff', ':FzfLua<CR>', {desc = 'fzf builtin'})
 vim.api.nvim_set_keymap('n', '<leader>fb', ':FzfLua buffers<CR>', {desc = 'fzf buffers'})

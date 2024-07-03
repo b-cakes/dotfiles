@@ -75,7 +75,7 @@ return {
 		    -- Used when not being rendered, get user setting
 		    default = vim.api.nvim_get_option_value('concealcursor', {}),
 		    -- Used when being rendered, conceal text in all modes
-		    rendered = 'nvic',
+		    rendered = 'nc',
 		},
 	    },
 	    -- Add a line above and below tables to complete look, ends up like a window

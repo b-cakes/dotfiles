@@ -26,7 +26,14 @@ return {
 
     notes_subdir = "Notes",
 
-    daily_notes = { folder = "Daily" },
+    daily_notes = {
+      folder = "Daily",
+      template = "Daily.md",
+    },
+
+    templates = {
+      folder = "Templates",
+    },
 
     completion = {
       -- If using nvim-cmp, otherwise set to false

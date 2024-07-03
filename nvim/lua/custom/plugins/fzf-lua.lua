@@ -1,14 +1,14 @@
-return {
+local M = {
   "ibhagwan/fzf-lua",
-
   lazy = false,
-
-  -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
+}
 
-  config = function()
-    -- calling `setup` is optional for customization
-    require("fzf-lua").setup({
+function M.config ()
+
+  local fzf = require("fzf-lua")
+
+    fzf.setup({
 
       "default-title",
 
@@ -44,10 +44,7 @@ return {
         ["marker"] = { "fg", "Statement" },
         ["gutter"] = { "bg", "NormalFloat" },
       }
-
-      -- fzf_colors = true,
-
     })
+end
 
-  end
-}
+return M

@@ -32,3 +32,4 @@ vim.o.cmdheight = 0
 
 vim.o.conceallevel = 2
 
+vim.o.concealcursor = 'nc'
