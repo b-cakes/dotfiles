@@ -25,6 +25,7 @@ return {
     },
 
     notes_subdir = "Notes",
+    new_notes_location = "notes_subdir",
 
     daily_notes = {
       folder = "Daily",
