@@ -1,8 +1,21 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- If using mini.colors colorscheme, use the vim.cmd.colorscheme command in this file.
-vim.cmd.colorscheme('tokyo-cat')
+-- default colorscheme or fallback
+vim.g.SCHEME = "tokyo-cat"
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  nested = true,
+  callback = function()
+    pcall(vim.cmd.colorscheme, vim.g.SCHEME)
+  end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function(params)
+    vim.g.SCHEME = params.match
+  end,
+})
 
 -- Set highlight on search
 vim.o.hlsearch = false

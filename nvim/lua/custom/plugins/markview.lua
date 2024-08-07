@@ -1,60 +1,120 @@
-return {
+local M = {
     "OXY2DEV/markview.nvim",
-    lazy = true,
-    ft = "markdown",
+    lazy = false,
+    -- ft = "markdown",
     dependencies = {
         -- You may not need this if you don't lazy load
         -- Or if the parsers are in your $RUNTIMEPATH
         "nvim-treesitter/nvim-treesitter",
-
         "nvim-tree/nvim-web-devicons"
-    },
-    opts = {
+    }
+}
+
+
+function M.config()
+    local markview = require("markview")
+    local presets = require("markview.presets")
+
+    markview.setup({
+        modes = { "n", "i", "no", "c" }, -- Change these modes
+        hybrid_modes = { "n", "i" },     -- Uses this feature on
+
+        callbacks = {
+
+            on_enable = function (_, win)
+                vim.wo[win].conceallevel = 2;
+                vim.wo[win].concealcursor = "nc";
+            end,
+
+            on_mode_change = function(buf, win, mode)
+                vim.wo[win].conceallevel = 2;
+                vim.wo[win].concealcursor = "nc";
+                -- Stuff to do when mode changes(while
+                -- the plugin is enabled)
+            end
+        },
+
+        -- headings = presets.headings.glow_labels,
 
         headings = {
+            enable = true,
             shift_width = 0,
+
             heading_1 = {
                 style = "label",
                 hl = "@markup.heading.1",
                 padding_left = " ",
                 padding_right = " ",
                 icon = "",
+                sign = "",
             },
+
             heading_2 = {
                 style = "label",
                 hl = "@markup.heading.2",
                 padding_left = " ",
                 padding_right = " ",
                 icon = "",
+                sign = "",
             },
+
             heading_3 ={
                 style = "label",
                 hl = "@markup.heading.3",
                 padding_left = " ",
                 padding_right = " ",
                 icon = "",
+                sign = "",
             },
+
             heading_4 = {
                 style = "label",
                 hl = "@markup.heading.4",
                 padding_left = " ",
                 padding_right = " ",
                 icon = "",
+                sign = "",
             },
+
             heading_5 = {
                 style = "label",
                 hl = "@markup.heading.5",
                 padding_left = " ",
                 padding_right = " ",
                 icon = "",
+                sign = "",
             },
+
             heading_6 = {
                 style = "label",
                 hl = "@markup.heading.6",
                 padding_left = " ",
                 padding_right = " ",
                 icon = "",
+                sign = "",
             },
+
+        },
+
+
+        code_blocks = {
+            enable = true,
+
+            style = "language",
+            hl = "dark",
+
+            position = "overlay",
+
+            min_width = 60,
+            pad_amount = 3,
+
+            language_names = {
+                { "py", "python" },
+                { "cpp", "C++" }
+            },
+            language_direction = "right",
+
+            sign = false, sign_hl = nil
         },
 
         checkboxes = {
@@ -65,23 +125,21 @@ return {
             enable = false,
         },
 
-        -- horizontal_rules = {
-        --     -- position = "inline",
-        --     parts = {
-        --         {
-        --             type = "text",
-        --
-        --             text = "─",
-        --             hl = "rainbow6"
-        --         }
-        --     },
-        --     -- parts = {
-        --     --     type = "repeating",
-        --     --     text = "─",
-        --     --     repeat_amount = 120,
-        --     --     hl = "Comment",
-        --     --     direction = "left"
-        --     -- },
-        -- },
-    }
-}
+        horizontal_rules = {
+            enable = true,
+
+            parts = {
+                {
+                    type = "repeating",
+
+                    repeat_amount = 80,
+                    text = "─",
+                    hl = "Comment"
+                }
+            }
+        }
+    })
+
+end
+
+return M

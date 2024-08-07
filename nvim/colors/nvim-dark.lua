@@ -42,6 +42,12 @@ hi(0, "@lsp.type.type", { link = "@type" })
 hi(0, "@lsp.type.typeParameter", { link = "@type.definition" })
 hi(0, "@lsp.type.variable", { link = "@variable" })
 hi(0, "@markup.heading", { link = "Title" })
+hi(0, "@markup.heading.1", { fg = "NvimLightCyan", bg = "NvimDarkGrey3" })
+hi(0, "@markup.heading.2", { fg = "NvimLightGreen", bg = "NvimDarkGrey3" })
+hi(0, "@markup.heading.3", { bg = "NvimDarkGrey3" })
+hi(0, "@markup.heading.4", { bg = "NvimDarkGrey3" })
+hi(0, "@markup.heading.5", { bg = "NvimDarkGrey3" })
+hi(0, "@markup.heading.6", { bg = "NvimDarkGrey3" })
 hi(0, "@markup.link", { link = "Underlined" })
 hi(0, "@module.builtin", { link = "Special" })
 hi(0, "@number.float", { link = "Float" })
@@ -88,6 +94,7 @@ hi(0, "IndentBlanklineSpaceCharBlankline", { fg = "#4f5258", nocombine = true })
 hi(0, "MiniCursorword", { underline = true })
 hi(0, "NoiceFormatProgressDone", { bg = "#6b5300", fg = "#eef1f8" })
 hi(0, "NoiceHiddenCursor", { blend = 100, nocombine = true })
+hi(0, "Normal", { fg = "NvimLightGrey2", bg = "NvimDarkGrey2" })
 hi(0, "NotifyDEBUGBorder", { fg = "#8b8b8b" })
 hi(0, "NotifyDEBUGIcon", { fg = "#8b8b8b" })
 hi(0, "NotifyDEBUGTitle", { fg = "#8b8b8b" })
@@ -111,33 +118,27 @@ hi(0, "NotifyTRACETitle", { fg = "#d484ff" })
 hi(0, "NotifyWARNBorder", { fg = "#79491d" })
 hi(0, "NotifyWARNIcon", { fg = "#f79000" })
 hi(0, "NotifyWARNTitle", { fg = "#f79000" })
-hi(0, "bg_.bg1_fg_.bg1_", { bg = "#2a2c32", fg = "#2a2c32" })
-hi(0, "bg_.bg1_fg_2c2e33_", { bg = "#2a2c32", fg = "#2c2e33" })
-hi(0, "bg_.bg2_fg_.bg2_", { bg = "#414349", fg = "#414349" })
-hi(0, "bg_.bg2_fg_.blue_", { bg = "#414349", fg = "#0000ff" })
-hi(0, "bg_.bg2_fg_2c2e33_", { bg = "#414349", fg = "#2c2e33" })
-hi(0, "bg_.blue_fg_.bg_", { bg = "#0000ff", fg = "#14161b" })
-hi(0, "bg_.blue_fg_.blue_", { bg = "#0000ff", fg = "#0000ff" })
-hi(0, "bg_.green_fg_c4c6cd_", { bg = "#008000", fg = "#c4c6cd" })
-hi(0, "bg_2c2e33_fg_c4c6cd_", { bg = "#2c2e33", fg = "#c4c6cd" })
-hi(0, "bg_c4c6cd_fg_2c2e33_", { bg = "#c4c6cd", fg = "#2c2e33" })
-hi(0, "bg_c4c6cd_fg_c4c6cd_", { bg = "#c4c6cd", fg = "#c4c6cd" })
 hi(0, "incline__gui_bold", { bold = true })
-hi(0, "incline__guibg_353b4c", { bg = "#353b4c" })
+hi(0, "incline__guibg_353b4c", { bg = "NvimDarkGrey2" })
 hi(0, "incline__guibg_51a0cf__guifg_000000", { bg = "#51a0cf", fg = "#000000" })
+hi(0, "Statusline", { link = "NormalFloat" })
 
 -- Terminal colors
 local g = vim.g
 
+g.terminal_color_0 = "NvimDarkGrey1"
 g.terminal_color_1 = "#ff4040"
 g.terminal_color_2 = "#90ee90"
 g.terminal_color_3 = "#fce094"
 g.terminal_color_4 = "#c4c6cd"
 g.terminal_color_5 = "#ffbbff"
 g.terminal_color_6 = "#98f5ff"
+g.terminal_color_7 = "NvimLighGrey1"
+g.terminal_color_8 = "NvimDarkGrey2"
 g.terminal_color_9 = "#ff4040"
 g.terminal_color_10 = "#90ee90"
 g.terminal_color_11 = "#fce094"
 g.terminal_color_12 = "#c4c6cd"
 g.terminal_color_13 = "#ffbbff"
 g.terminal_color_14 = "#98f5ff"
+g.terminal_color_15 = "NvimLightGrey2"

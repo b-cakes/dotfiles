@@ -1,13 +1,16 @@
 return {
-  {
-    'folke/which-key.nvim',
-    opts = {
-      window = {
-        border = "rounded",
-      },
-      layout = {
-        align = "center",
-      },
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    preset = "helix",
+  },
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
     },
   },
 }

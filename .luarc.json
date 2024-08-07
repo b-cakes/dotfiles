@@ -3,5 +3,9 @@
         "vim",
         "Bar",
         "MiniStatusline"
+    ],
+    "diagnostics.disable": [
+        "undefined-doc-name",
+        "unused-local"
     ]
 }

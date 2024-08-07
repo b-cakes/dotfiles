@@ -30,15 +30,24 @@ function Plugin.config()
   local mode = nut.mode({
     prefix = " ",
     suffix = " ",
+    config = {
+      highlight = {
+        normal = { bg = "blue", fg = "bg1" },
+        insert = { bg = "green", fg = "bg1",},
+        commandline = { bg = "cyan", fg = "bg1" },
+      },
+    },
   })
-
   local stl = Bar("statusline")
+
   stl:add_item(mode)
+
   stl:add_item(nut.git.branch({
     hl = { bg = color.bg2 },
     prefix = "  ",
     suffix = " ",
   }))
+
   stl:add_item(nut.git.status.create({
     hl = { bg = color.bg1 },
     content = {
@@ -59,13 +68,16 @@ function Plugin.config()
       }),
     },
   }))
+
   stl:add_item(nut.buf.filename({
     sep_left = sep.space(true),
     prefix = " ",
     suffix = " ",
   }))
+
   stl:add_item(nut.spacer())
   stl:add_item(nut.truncation_point())
+
   stl:add_item(nut.buf.diagnostic_count({
     sep_left = sep.space(true),
     prefix = " ",
@@ -77,12 +89,14 @@ function Plugin.config()
       hint = { prefix = "󰌶 " },
     },
   }))
+
   stl:add_item(nut.buf.filetype({
     hl = { bg = color.bg1 },
     sep_left = sep.space(true),
     prefix = " ",
     suffix = " ",
   }))
+
   stl:add_item(Item({
     hl = { bg = color.bg2, fg = color.blue },
     sep_left = sep.space(true),
@@ -94,16 +108,24 @@ function Plugin.config()
     }),
     suffix = " ",
   }))
+
   stl:add_item(Item({
     hl = { bg = color.blue, fg = color.bg },
     sep_left = sep.space(true),
     prefix = " ",
     content = core.code("P"),
     suffix = " ",
+    config = {
+      highlight = {
+        normal = { bg = "blue", fg = "bg" },
+        insert = { bg = "green", fg = "bg",},
+        commandline = { bg = "cyan", fg = "bg" },
+      },
+    },
   }))
 
   local stl_inactive = Bar("statusline")
-  stl_inactive:add_item(mode)
+  stl_inactive:add_item(nut.mode())
   stl_inactive:add_item(nut.spacer())
 
   nougat.set_statusline(function(ctx)
