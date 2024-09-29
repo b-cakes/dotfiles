@@ -119,6 +119,21 @@ function M.config()
 
         checkboxes = {
             enable = false,
+            checked = { text = "" },
+            unchecked = { text = "󰄱" },
+            custom = {
+                {
+                    match = "D",
+                    text = "󰃵",
+                    hl = "Special",
+                },
+            },
+        },
+
+        links = {
+            enable = false,
+            hyperlinks = { hl = "DiagnosticInfo" },
+            images = { hl = "DiagnosticInfo" },
         },
 
         list_items = {
