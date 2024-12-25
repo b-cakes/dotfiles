@@ -131,13 +131,74 @@ function M.config()
         },
 
         links = {
-            enable = false,
-            hyperlinks = { hl = "DiagnosticInfo" },
-            images = { hl = "DiagnosticInfo" },
+            enable = true,
+
+            --- Configuration for normal links
+            hyperlinks = {
+                enable = true,
+
+                --- When true, link texts that start with an emoji
+                --- won't have an icon in front of them.
+                ---@type boolean
+                __emoji_link_compatability = true,
+
+                --- Icon to show.
+                ---@type string?
+                icon = "󰌷 ",
+
+                --- Highlight group for the "icon".
+                ---@type string?
+                hl = "MarkviewHyperlink",
+
+                --- Configuration for custom links.
+                custom = {
+                    {
+                        --- Pattern of the address.
+                        ---@type string
+                        match_string = "stackoverflow%.com",
+
+                        --- Icon to show.
+                        ---@type string?
+                        icon = " ",
+
+                        --- Highlight group for the icon
+                        ---@type string?
+                        hl = nil
+                    },
+                    { match_string = "stackexchange%.com", icon = " " },
+                }
+            },
+
+            images = {
+                enable = true,
+
+                --- Icon to show.
+                ---@type string?
+                icon = "󰥶 ",
+
+                --- Highlight group for the "icon".
+                ---@type string?
+                hl = "MarkviewImageLink",
+            },
+
+            internal_links = {
+                enable = true,
+
+
+                --- Icon to show.
+                ---@type string?
+                icon = "",
+
+                --- Highlight group for the "icon".
+                ---@type string?
+                hl = "MarkviewHyperlink",
+
+                --- Configuration for custom internal links
+            }
         },
 
         list_items = {
-            enable = false,
+            enable = true,
         },
 
         horizontal_rules = {

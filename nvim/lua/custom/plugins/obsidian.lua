@@ -122,7 +122,7 @@ return {
     sort_reversed = true,
 
     ui = {
-      enable = true,
+      enable = false,
       checkboxes = {
         ["<"] = { char = "󰃵" },
         ["D"] = { char = "󰃵" },

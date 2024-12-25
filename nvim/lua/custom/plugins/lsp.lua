@@ -211,8 +211,6 @@ return {
 
       -- lua language server for neovim
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-      -- ruff_lsp
-      lspconfig.ruff_lsp.setup({})
       -- pyright
       lspconfig.pyright.setup({})
 

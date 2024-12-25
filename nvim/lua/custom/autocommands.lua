@@ -39,3 +39,15 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "randomhue",
 	command = "hi link TelescopeNormal NormalFloat | hi link TelescopePromptNormal NormalFloat",
 })
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  callback = function()
+    vim.cmd("redrawstatus")
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
+  callback = function()
+    vim.cmd("redrawstatus")
+  end,
+})

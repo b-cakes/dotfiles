@@ -24,8 +24,8 @@ function M.config ()
       hls = {
         border = "NormalFloat",
         title = "Search",
-        preview_normal = "ColorColumn",
-        preview_border = "ColorColumn",
+        preview_normal = "Normal",
+        preview_border = "Normal",
         preview_title = "CurSearch",
         cursorline = "CursorLine",
       },
