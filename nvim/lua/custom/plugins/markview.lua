@@ -118,7 +118,7 @@ function M.config()
         },
 
         checkboxes = {
-            enable = false,
+            enable = true,
             checked = { text = "" },
             unchecked = { text = "󰄱" },
             custom = {
@@ -199,6 +199,13 @@ function M.config()
 
         list_items = {
             enable = true,
+            indent_size = 4,
+            shift_width = 4,
+            marker_minus = {
+                text = "•",
+                hl = "",
+            },
+
         },
 
         horizontal_rules = {

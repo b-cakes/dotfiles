@@ -24,8 +24,11 @@ config.underline_position = -2
 config.enable_kitty_graphics = true
 config.cursor_blink_rate = 390
 
+config.color_scheme = 'tokyo-cat'
+
 
 -- Use 'ColorschemeDump wezterm' command to paste the current neovim colorscheme into the below format. 
+-- Not sure which colorscheme this is. Possibly catppucin. 
 -- config.colors = {
 --     foreground	=	"#c5c6cd",
 --     background	=	"#202131",
@@ -54,34 +57,5 @@ config.cursor_blink_rate = 390
 --      "#c5c6cd",
 --     }
 --   }
-
-config.colors = {
-  foreground	=	"#c3c7cd",
-  background	=	"#111624",
-  selection_bg	=	"#c3c7cd",
-  selection_fg	=	"#111624",
-  cursor_fg	=	"#111624",
-  cursor_bg	=	"#c3c7cd",
-  ansi = {
-    "#353b4c",
-    "#f6b2ba",
-    "#a6d5a8",
-    "#d1c98c",
-    "#94cff4",
-    "#e3b5e3",
-    "#87d8d3",
-    "#c3c7cd",
-  },
-  brights = {
-    "#353b4c",
-    "#f6b2ba",
-    "#a6d5a8",
-    "#d1c98c",
-    "#94cff4",
-    "#e3b5e3",
-    "#87d8d3",
-    "#c3c7cd",
-  }
-}
 
 return config
