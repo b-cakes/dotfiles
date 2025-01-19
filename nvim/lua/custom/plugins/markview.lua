@@ -200,7 +200,7 @@ function M.config()
         list_items = {
             enable = true,
             indent_size = 4,
-            shift_width = 4,
+            shift_width = 2,
             marker_minus = {
                 text = "•",
                 hl = "",

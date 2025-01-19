@@ -24,7 +24,7 @@ config.underline_position = -2
 config.enable_kitty_graphics = true
 config.cursor_blink_rate = 390
 
-config.color_scheme = 'tokyo-cat'
+config.color_scheme = 'NvimDark'
 
 
 -- Use 'ColorschemeDump wezterm' command to paste the current neovim colorscheme into the below format. 

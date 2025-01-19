@@ -14,7 +14,6 @@ These are my dotfiles on macOS.
     - aliases for exa
 - tmux
 - wezterm
-- ranger
 
 I also save my iterm2 profiles here and keep my zellij config in here.
 
