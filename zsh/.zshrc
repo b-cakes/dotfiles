@@ -62,10 +62,10 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-alias ls='exa --icons -l'
-alias la='exa -a --icons'
-alias ll='exa -l -a --icons'
-alias l='exa -l -a --icons -h --no-permissions --no-user'
+alias ls='eza --icons -l'
+alias la='eza -a --icons'
+alias ll='eza -l -a --icons'
+alias l='eza -l -a --icons -h --no-permissions --no-user'
 alias rich='rich --syntax'
 alias py='python3'
 
