@@ -4,7 +4,7 @@ return {
     'stevearc/dressing.nvim',
     opts = {
       select = {
-        backend = { "builtin" },
+        backend = { "fzf_lua" },
         builtin = {
           relative = "cursor",
         },

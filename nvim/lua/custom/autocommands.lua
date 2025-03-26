@@ -1,19 +1,34 @@
 -- alpha dashboard
--- local alpha_group = vim.api.nvim_create_augroup("alpha", { clear = true })
--- vim.api.nvim_create_autocmd("User", {
--- 	group = alpha_group,
--- 	pattern = "AlphaReady",
--- 	command = "set laststatus=0 | set showtabline=0",
--- })
--- vim.api.nvim_create_autocmd("User", {
--- 	group = alpha_group,
--- 	pattern = "AlphaClosed",
--- 	command = "set laststatus=3",
--- })
+local alpha_group = vim.api.nvim_create_augroup("alpha", { clear = true })
+
+-- disable cursorline in alpha dashboard
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "alpha",
+	callback = function()
+		vim.opt_local.cursorline = false
+	end,
+	group = alpha_group,
+})
+
+vim.api.nvim_create_autocmd("WinLeave", {
+	command = "set nocursorline"
+})
+
+vim.api.nvim_create_autocmd("WinEnter", {
+	pattern = "*",
+	callback = function()
+		if vim.bo.filetype == "alpha" then
+			vim.opt_local.cursorline = false
+		else
+			vim.opt_local.cursorline = true
+		end
+	end,
+	group = alpha_group,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
-	callback = function ()
+	callback = function()
 		vim.opt_local.textwidth = 120
 		vim.opt_local.wrap = true
 	end
@@ -25,19 +40,14 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	command = "hi link TelescopeNormal NormalFloat | hi link TelescopePromptNormal NormalFloat",
 })
 
-vim.api.nvim_create_autocmd("WinLeave", {
-	command = "set nocursorline"
-})
-
-vim.api.nvim_create_autocmd("WinEnter", {
-	command = "set cursorline"
-})
-
-vim.api.nvim_create_augroup('TelescopeCursorLine', { clear = true })
-vim.api.nvim_create_autocmd('User', {
-  group = 'TelescopeCursorLine',
-  pattern = 'TelescopePreviewerLoaded',
+vim.api.nvim_create_autocmd("ModeChanged", {
   callback = function()
-    vim.opt_local.cursorline = false
+    vim.cmd("redrawstatus")
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
+  callback = function()
+    vim.cmd("redrawstatus")
   end,
 })

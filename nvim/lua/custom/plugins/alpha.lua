@@ -14,7 +14,7 @@ function M.config()
 
 	-- function to create multiple colors for the header
 	local function apply_gradient_hl(text)
-		local gradient = require("custom.utils").create_gradient(vim.g.terminal_color_6, vim.g.terminal_color_5, #text)
+		local gradient = require("custom.utils").create_gradient(vim.g.terminal_color_6, vim.g.terminal_color_2, #text)
 
 		local lines = {}
 		for i, line in ipairs(text) do
@@ -90,9 +90,9 @@ function M.config()
 	local links = {
 		type = "group",
 		val = {
-			dashboard.button("SPC m f", "  File Manager"),
+			dashboard.button("f", "  FzfLua", "<cmd>FzfLua<CR>"),
 			dashboard.button("l", "鈴 Lazy", "<cmd>Lazy<CR>"),
-			dashboard.button("t", "  Telescope", "<cmd>Telescope<CR>"),
+			dashboard.button("SPC m f", "  File Manager"),
 		},
 		position = "center",
 	}

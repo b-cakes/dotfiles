@@ -36,6 +36,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS='
+    --color 16
+'
+
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/Users/johnharpt/.local/bin:$PATH"
 
@@ -56,10 +62,10 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-alias ls='exa --icons'
-alias la='exa -a --icons'
-alias ll='exa -l -a --icons'
-alias l='exa -l -a --icons -h --no-permissions --no-user'
+alias ls='eza --icons -l'
+alias la='eza -a --icons'
+alias ll='eza -l -a --icons'
+alias l='eza -l -a --icons -h --no-permissions --no-user'
 alias rich='rich --syntax'
 alias py='python3'
 
