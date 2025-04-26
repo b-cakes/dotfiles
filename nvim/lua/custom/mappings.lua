@@ -42,4 +42,6 @@ vim.api.nvim_set_keymap('n', '<leader>nf', ':NoiceFzf<CR>', {desc = 'NoiceFzf'})
 vim.api.nvim_set_keymap('n', '<leader>ff', ':FzfLua<CR>', {desc = 'fzf builtin'})
 vim.api.nvim_set_keymap('n', '<leader>fb', ':FzfLua buffers<CR>', {desc = 'fzf buffers'})
 
-vim.api.nvim_set_keymap('n', '<leader>zm', ':ZenMode<CR>', {desc = 'ZenMode toggle'})
+-- trouble.nvim mappings
+vim.api.nvim_set_keymap('n', '<leader>td', ':Trouble diagnostics<CR>', {desc = 'Trouble diagnostics'})
+
