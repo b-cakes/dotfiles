@@ -1,0 +1,12 @@
+# dragon
+[colors]
+foreground = "#b4b8b4"
+background = "#0d0c0c"
+selection_bg = "#b4b8b4"
+selection_fg = "#0d0c0c"
+cursor_fg = "#0d0c0c"
+cursor_bg = "#b4b8b4"
+
+ansi = ["#0d0c0c", "#c4746e", "#8a9a7b", "#c8ae81", "#8ba4b0", "#a292a3", "#95aeac", "#b4b8b4"]
+
+brights = ["#393836", "#e46876", "#87a987", "#dca561", "#7fb4ca", "#938aa9", "#7aa89f", "#b4b8b4"]
