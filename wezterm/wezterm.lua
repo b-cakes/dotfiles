@@ -24,11 +24,7 @@ config.underline_position = -2
 config.enable_kitty_graphics = true
 config.cursor_blink_rate = 390
 
-<<<<<<< Updated upstream
 config.color_scheme = 'rose-pine-moon'
-=======
-config.color_scheme = 'tokyo-cat'
->>>>>>> Stashed changes
 
 
 -- Use 'ColorschemeDump wezterm' command to paste the current neovim colorscheme into the below format. 
