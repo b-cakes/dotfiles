@@ -104,7 +104,7 @@ function Plugin.config()
   stl:add_item(nut.spacer())
   stl:add_item(nut.truncation_point())
   stl:add_item(Item({
-    hl = { bg = "black", fg = "yellow" },
+    hl = { fg = "yellow" },
     sep_left = sep.space(true),
     content = function()
       return recording_macro()

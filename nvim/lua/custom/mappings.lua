@@ -27,19 +27,24 @@ vim.keymap.set("n", "gf", function()
   end
 end, { noremap = false, expr = true })
 
-vim.api.nvim_set_keymap('n', '<leader>on', ':ObsidianNew ', {desc = 'ObsidianNew'})
-vim.api.nvim_set_keymap('n', '<leader>oq', ':ObsidianQuickSwitch<CR>', {desc = 'ObsidianQuickSwitch'})
-vim.api.nvim_set_keymap('n', '<leader>os', ':ObsidianSearch<CR>', {desc = 'ObsidianSearch'})
-vim.api.nvim_set_keymap('n', '<leader>ot', ':ObsidianTags<CR>', {desc = 'ObsidianTags'})
-vim.api.nvim_set_keymap('n', '<leader>ol', ':ObsidianLinks<CR>', {desc = 'ObsidianLinks'})
-vim.api.nvim_set_keymap('n', '<leader>ob', ':ObsidianBacklinks<CR>', {desc = 'ObsidianBacklinks'})
+vim.api.nvim_set_keymap('n', '<leader>on', ':Obsidian new ', {desc = 'Obsidian New'})
+vim.api.nvim_set_keymap('n', '<leader>oq', ':Obsidian quick_switch<CR>', {desc = 'Obsidian Quick Switch'})
+vim.api.nvim_set_keymap('n', '<leader>os', ':Obsidian search<CR>', {desc = 'Obsidian Search'})
+vim.api.nvim_set_keymap('n', '<leader>ot', ':Obsidian tags<CR>', {desc = 'Obsidian Tags'})
+vim.api.nvim_set_keymap('n', '<leader>ol', ':Obsidian links<CR>', {desc = 'Obsidian Links'})
+vim.api.nvim_set_keymap('n', '<leader>ob', ':Obsidian backlinks<CR>', {desc = 'Obsidian Backlinks'})
 
 -- Noice mappings
 vim.api.nvim_set_keymap('n', '<leader>nd', ':NoiceDismiss<CR>', {desc = 'NoiceDismiss'})
 vim.api.nvim_set_keymap('n', '<leader>nf', ':NoiceFzf<CR>', {desc = 'NoiceFzf'})
 
 -- fzf-lua.nvim mappings
-vim.api.nvim_set_keymap('n', '<leader>ff', ':FzfLua<CR>', {desc = 'fzf builtin'})
-vim.api.nvim_set_keymap('n', '<leader>fb', ':FzfLua buffers<CR>', {desc = 'fzf buffers'})
+vim.api.nvim_set_keymap('n', '<leader>ff', ':FzfLua files<CR>', {desc = 'fzf files'})
+vim.api.nvim_set_keymap('n', '<leader>fb', ':FzfLua<CR>', {desc = 'fzf builtin'})
+vim.api.nvim_set_keymap('n', '<leader><leader>', ':FzfLua buffers<CR>', {desc = 'fzf buffers'})
 
-vim.api.nvim_set_keymap('n', '<leader>zm', ':ZenMode<CR>', {desc = 'ZenMode toggle'})
+-- trouble.nvim mappings
+vim.api.nvim_set_keymap('n', '<leader>td', ':Trouble diagnostics<CR>', {desc = 'Trouble diagnostics'})
+
+-- mkdownflow.nvim
+vim.api.nvim_set_keymap('n', '<leader>fh', ':MkdnFoldSection<CR>', {desc = 'MkdnFoldSection'})

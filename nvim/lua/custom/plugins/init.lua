@@ -11,7 +11,6 @@ return {
   -- { 'tpope/vim-rhubarb' },
   { 'tpope/vim-sleuth' },
 
-  { 'folke/neodev.nvim' },
 
   -- for pasting nvim colorscheme palette into wezterm
   { 'goolord/nvim-colorscheme-convert' },
