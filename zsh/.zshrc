@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH 
+export PATH=$HOME/bin:/usr/local/bin:$PATH 
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -57,6 +57,9 @@ export PATH="/Users/johnharpt/.local/bin:$PATH"
 # fi
 export EDITOR='nvim'
 
+# Set home base config directory
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Aliases can be placed here, though omz users
 # are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
@@ -68,6 +71,7 @@ alias ll='eza -l -a --icons'
 alias l='eza -l -a --icons -h --no-permissions --no-user'
 alias rich='rich --syntax'
 alias py='python3'
+alias nvim-test-config='NVIM_APPNAME-nvim-test-config nvim'
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

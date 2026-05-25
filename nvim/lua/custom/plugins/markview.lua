@@ -10,7 +10,7 @@ local M = {
 function M.config()
     local markview = require("markview")
     local presets = require("markview.presets")
-    
+
     markview.setup({
 	markdown = {
 	    headings = presets.headings.glow,
